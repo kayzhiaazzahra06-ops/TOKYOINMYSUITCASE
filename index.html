@@ -37,7 +37,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Top Ribbon Banner */
     .top-ribbon {
       background: linear-gradient(90deg, #3A262F, #573846, #3A262F);
       color: #FDF8F9;
@@ -55,12 +54,10 @@
       padding: 0 24px;
     }
 
-    /* Hero Section */
     header {
       padding: 68px 0 46px;
       text-align: center;
       border-bottom: 1px solid var(--border);
-      position: relative;
     }
 
     .jp-kicker {
@@ -103,7 +100,6 @@
       font-weight: 300;
     }
 
-    /* Live Exchange Rate Pill */
     .kurs-pill {
       display: inline-flex;
       flex-wrap: wrap;
@@ -137,7 +133,6 @@
       font-size: 0.75rem;
     }
 
-    /* Section Headings */
     .section-head {
       display: flex;
       justify-content: space-between;
@@ -169,7 +164,6 @@
       color: var(--rose-deep);
     }
 
-    /* Rates & Terms */
     .rates-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -227,7 +221,6 @@
       color: var(--ink);
     }
 
-    /* Filter & Search Controls */
     .controls-wrap {
       display: flex;
       flex-direction: column;
@@ -297,18 +290,18 @@
       color: var(--ink-muted);
     }
 
-    /* Catalog Grid with Product Photos */
+    /* Boutique Product Cards (Accurate Brand Plate + Official Visual Link) */
     .catalog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
     }
 
     .item-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 20px;
-      overflow: hidden;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -321,58 +314,78 @@
       box-shadow: 0 14px 32px rgba(183, 123, 142, 0.14);
     }
 
-    .item-photo-box {
+    /* Boutique Brand Plate (Replaces Mismatched Stock Photos) */
+    .brand-plate {
       position: relative;
-      height: 195px;
-      background: var(--bg-petal);
-      overflow: hidden;
+      background: linear-gradient(145deg, #FDF6F8 0%, #F5E6EB 100%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 16px 18px;
+      text-align: center;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 138px;
     }
 
-    .item-photo-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.45s ease;
-    }
-
-    .item-card:hover .item-photo-box img {
-      transform: scale(1.05);
-    }
-
-    .item-fee-pill {
+    .plate-fee {
       position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(6px);
+      top: 10px;
+      right: 10px;
+      background: #FFFFFF;
       border: 1px solid var(--border);
       color: var(--rose-deep);
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      padding: 4px 10px;
+      padding: 3px 9px;
       border-radius: 999px;
     }
 
-    .item-body {
-      padding: 18px 20px 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      justify-content: space-between;
+    .plate-jp {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.68rem;
+      color: var(--rose-gold);
+      letter-spacing: 1.5px;
+      margin-bottom: 4px;
     }
 
-    .item-brand {
-      font-size: 0.7rem;
-      letter-spacing: 1.5px;
+    .plate-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
-      color: var(--rose-deep);
+      color: var(--ink);
+      line-height: 1.15;
+    }
+
+    .btn-official-photo {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.71rem;
       font-weight: 600;
-      margin-bottom: 4px;
+      color: var(--rose-deep);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-official-photo:hover {
+      background: var(--rose-deep);
+      color: #FFFFFF;
+      border-color: var(--rose-deep);
     }
 
     .item-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
+      font-size: 1.28rem;
       font-weight: 600;
       line-height: 1.25;
       color: var(--ink);
@@ -418,7 +431,6 @@
       color: #FFFFFF;
     }
 
-    /* Expand All Collection CTA */
     .expand-wrap {
       text-align: center;
       margin-top: 32px;
@@ -445,7 +457,6 @@
       border-color: #7A4356;
     }
 
-    /* Calculator & Custom Request */
     .concierge-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -599,7 +610,6 @@
   </div>
 
   <div class="container">
-    <!-- HEADER -->
     <header>
       <div class="jp-kicker">✿ 東京の贅沢 • GINZA & AOYAMA CURATION</div>
       <h1>Tokyo In <i>My</i> Suitcase</h1>
@@ -615,7 +625,6 @@
       </div>
     </header>
 
-    <!-- FEE & TERMS -->
     <div class="section-head">
       <h2>Commission <i>&</i> Terms</h2>
       <span>料金システム • Transparent Rates</span>
@@ -654,7 +663,6 @@
       <div><strong>✦ Privilege & Diskon:</strong> Mengikuti ketentuan promo aktif <em>Bellachérie</em>.</div>
     </div>
 
-    <!-- CURATED DIRECTORY -->
     <div class="section-head">
       <h2>Curated <i>Osusume</i> Directory</h2>
       <span>おすすめコレクション • 250 Curated Treasures</span>
@@ -672,7 +680,7 @@
       </div>
 
       <div class="search-row">
-        <input type="text" id="searchInput" class="search-input" placeholder="Cari brand atau barang (misal: Miu Miu, Royce, Cle de Peau, Onitsuka)..." />
+        <input type="text" id="searchInput" class="search-input" placeholder="Cari brand atau barang (misal: Canmake, Miu Miu, Royce, Cle de Peau)..." />
         <div class="item-count" id="itemCountLabel">Menampilkan 8 pilihan utama</div>
       </div>
     </div>
@@ -685,14 +693,12 @@
       </button>
     </div>
 
-    <!-- CALCULATOR & CONCIERGE REQUEST -->
     <div class="section-head">
       <h2>Estimator <i>&</i> Private Request</h2>
       <span>オーダーフォーム • Direct LINE Concierge</span>
     </div>
 
     <div class="concierge-grid">
-      <!-- CALCULATOR -->
       <div class="panel">
         <h3>Price Estimator</h3>
         <p class="lead">Simulasi otomatis harga Rupiah berdasarkan kurs detik ini beserta komisi jastip.</p>
@@ -733,19 +739,18 @@
         </div>
       </div>
 
-      <!-- CUSTOM REQUEST -->
       <div class="panel">
         <h3>Submit Custom Request</h3>
         <p class="lead">Kirim detail barang atau lampirkan foto referensi untuk pengecekan stok di Tokyo.</p>
 
         <div class="field">
           <label>Brand & Nama Barang</label>
-          <input type="text" id="reqName" placeholder="Contoh: Miu Miu Wander Matelassé Mini Bag" />
+          <input type="text" id="reqName" placeholder="Contoh: Canmake Marshmallow Finish Powder Abloom" />
         </div>
 
         <div class="field">
           <label>Kategori, Warna & Ukuran</label>
-          <input type="text" id="reqNote" placeholder="Contoh: Luxury (10%), Warna Cameo Beige, 1 pcs" />
+          <input type="text" id="reqNote" placeholder="Contoh: Skincare & Makeup (25%), Shade 01, 1 pcs" />
         </div>
 
         <div class="field">
@@ -773,79 +778,14 @@
     const LINE_URL = "https://line.me/ti/p/JxcFA9gakM";
     let currentJpyToIdr = 114;
 
-    // Curated Visual Photo Pools per Category & Sub-type
-    const photoPools = {
-      food_matcha: [
-        "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=600&q=80"
-      ],
-      food_sweet: [
-        "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80"
-      ],
-      food_ramen: [
-        "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=600&q=80"
-      ],
-      skincare_lux: [
-        "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=600&q=80"
-      ],
-      skincare_makeup: [
-        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80"
-      ],
-      shoes: [
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80"
-      ],
-      bags: [
-        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=600&q=80"
-      ],
-      clothes: [
-        "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600&q=80"
-      ],
-      luxury: [
-        "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80"
-      ]
+    const catJpLabel = {
+      food: "東京グルメ • FOOD & SNACK",
+      skincare: "銀座コスメ • BEAUTY & SKINCARE",
+      shoesbag: "青山コレクション • SHOES & BAGS",
+      clothes: "原宿・表参道 • APPAREL",
+      luxury: "ラグジュアリー • LUXURY BOUTIQUE"
     };
 
-    function pickPhoto(cat, name, idx) {
-      const n = name.toLowerCase();
-      let pool = photoPools.luxury;
-      if (cat === "food") {
-        if (n.includes("matcha") || n.includes("tea") || n.includes("coffee")) pool = photoPools.food_matcha;
-        else if (n.includes("ramen") || n.includes("udon") || n.includes("curry") || n.includes("yakisoba")) pool = photoPools.food_ramen;
-        else pool = photoPools.food_sweet;
-      } else if (cat === "skincare") {
-        if (n.includes("powder") || n.includes("lip") || n.includes("cheek") || n.includes("mascara") || n.includes("eyeshadow") || n.includes("foundation")) pool = photoPools.skincare_makeup;
-        else pool = photoPools.skincare_lux;
-      } else if (cat === "shoesbag") {
-        if (idx < 20) pool = photoPools.shoes;
-        else pool = photoPools.bags;
-      } else if (cat === "clothes") {
-        pool = photoPools.clothes;
-      } else if (cat === "luxury") {
-        pool = photoPools.luxury;
-      }
-      return pool[idx % pool.length];
-    }
-
-    // 50 POPULAR ITEMS PER CATEGORY (TOTAL 250 ITEMS)
     const rawCatalog = {
       food: [
         ["Royce'", "Nama Chocolate Au Lait", 864, 0.35, true],
@@ -1111,9 +1051,8 @@
 
     const allItems = [];
     Object.entries(rawCatalog).forEach(([cat, items]) => {
-      items.forEach(([brand, name, yen, rate, featured], idx) => {
-        const photo = pickPhoto(cat, name, idx);
-        allItems.push({ cat, brand, name, yen, rate, featured, photo });
+      items.forEach(([brand, name, yen, rate, featured]) => {
+        allItems.push({ cat, brand, name, yen, rate, featured });
       });
     });
 
@@ -1185,27 +1124,29 @@
       filtered.forEach(item => {
         const p = calcPrice(item.yen, item.rate);
         const pctLabel = Math.round(item.rate * 100) + "%";
+        const officialSearchUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(item.brand + " " + item.name + " Japan")}`;
         const card = document.createElement("div");
         card.className = "item-card";
         card.innerHTML = `
-          <div class="item-photo-box">
-            <img src="${item.photo}" alt="${item.brand} ${item.name}" loading="lazy" />
-            <span class="item-fee-pill">Fee ${pctLabel}</span>
+          <div>
+            <div class="brand-plate">
+              <span class="plate-fee">Fee ${pctLabel}</span>
+              <div class="plate-jp">${catJpLabel[item.cat]}</div>
+              <div class="plate-brand">${item.brand}</div>
+              <a href="${officialSearchUrl}" target="_blank" rel="noopener" class="btn-official-photo">
+                🔍 Lihat Foto Produk Asli ↗
+              </a>
+            </div>
+            <div class="item-title">${item.name}</div>
           </div>
-          <div class="item-body">
+          <div class="item-footer">
             <div>
-              <div class="item-brand">${item.brand}</div>
-              <div class="item-title">${item.name}</div>
+              <div class="price-yen">¥${item.yen.toLocaleString("ja-JP")}</div>
+              <div class="price-idr">Est. ${formatIdr(p.total)}</div>
             </div>
-            <div class="item-footer">
-              <div>
-                <div class="price-yen">¥${item.yen.toLocaleString("ja-JP")}</div>
-                <div class="price-idr">Est. ${formatIdr(p.total)}</div>
-              </div>
-              <button class="btn-inquire" onclick="inquireItem('${item.brand.replace(/'/g, "\\'")}', '${item.name.replace(/'/g, "\\'")}', ${item.yen}, '${pctLabel}', '${formatIdr(p.total)}')">
-                Titip ↗
-              </button>
-            </div>
+            <button class="btn-inquire" onclick="inquireItem('${item.brand.replace(/'/g, "\\'")}', '${item.name.replace(/'/g, "\\'")}', ${item.yen}, '${pctLabel}', '${formatIdr(p.total)}')">
+              Titip ↗
+            </button>
           </div>
         `;
         grid.appendChild(card);
