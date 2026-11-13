@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TOKYO IN MY SUITCASE — Private Curated Concierge</title>
+  <title>TOKYO IN MY SUITCASE — Parisian-Tokyo Curated Concierge</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+JP:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-cream: #F9F7F3;
+      --bg-blush: #FDF8F9;
+      --bg-petal: #F8EEF1;
       --bg-card: #FFFFFF;
-      --bg-soft: #F2EEE7;
-      --ink: #1A1817;
-      --ink-muted: #6E6862;
-      --gold: #9E8259;
-      --gold-light: #E8DFD1;
-      --border: #E5E0D8;
-      --line-green: #1F3A2E;
+      --ink: #2B1E24;
+      --ink-muted: #78626B;
+      --rose-gold: #B77B8E;
+      --rose-deep: #8F5266;
+      --champagne: #D4AF7A;
+      --border: #EDDDE2;
     }
 
     * {
@@ -27,20 +27,22 @@
     }
 
     body {
-      background-color: var(--bg-cream);
+      background-color: var(--bg-blush);
+      background-image: 
+        radial-gradient(circle at 10% 8%, rgba(232, 195, 207, 0.35), transparent 38%),
+        radial-gradient(circle at 90% 25%, rgba(212, 175, 122, 0.16), transparent 40%);
       color: var(--ink);
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 400;
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Top Editorial Ticker */
-    .top-bar {
-      background-color: var(--ink);
-      color: var(--bg-cream);
+    /* Top Ribbon Banner */
+    .top-ribbon {
+      background: linear-gradient(90deg, #3A262F, #573846, #3A262F);
+      color: #FDF8F9;
       font-size: 0.72rem;
-      letter-spacing: 2px;
+      letter-spacing: 2.2px;
       text-transform: uppercase;
       text-align: center;
       padding: 10px 16px;
@@ -55,39 +57,47 @@
 
     /* Hero Section */
     header {
-      padding: 72px 0 48px;
+      padding: 68px 0 46px;
       text-align: center;
       border-bottom: 1px solid var(--border);
+      position: relative;
     }
 
-    .eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-      font-weight: 600;
+    .jp-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.76rem;
+      letter-spacing: 2.5px;
+      color: var(--rose-deep);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 16px rgba(183, 123, 142, 0.08);
     }
 
     h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.6rem, 5.5vw, 4.4rem);
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: -0.5px;
       line-height: 1.08;
       color: var(--ink);
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     h1 i {
       font-style: italic;
-      font-weight: 400;
-      color: var(--gold);
+      font-weight: 500;
+      color: var(--rose-gold);
     }
 
     .subtitle {
-      max-width: 580px;
-      margin: 0 auto 32px;
+      max-width: 590px;
+      margin: 0 auto 30px;
       color: var(--ink-muted);
       font-size: 0.95rem;
       font-weight: 300;
@@ -96,27 +106,30 @@
     /* Live Exchange Rate Pill */
     .kurs-pill {
       display: inline-flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      gap: 10px;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 10px 22px;
+      padding: 11px 24px;
       border-radius: 999px;
-      font-size: 0.82rem;
+      font-size: 0.83rem;
       color: var(--ink);
-      box-shadow: 0 4px 20px rgba(26, 24, 23, 0.03);
+      box-shadow: 0 6px 24px rgba(183, 123, 142, 0.1);
     }
 
-    .status-dot {
-      width: 7px;
-      height: 7px;
+    .pulse-petal {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background-color: #2E6F40;
+      background-color: #C86D8A;
+      box-shadow: 0 0 8px rgba(200, 109, 138, 0.6);
     }
 
     .kurs-num {
       font-weight: 600;
-      color: var(--gold);
+      color: var(--rose-deep);
     }
 
     .kurs-time {
@@ -131,7 +144,7 @@
       align-items: baseline;
       flex-wrap: wrap;
       gap: 12px;
-      margin: 64px 0 28px;
+      margin: 60px 0 26px;
       padding-bottom: 14px;
       border-bottom: 1px solid var(--border);
     }
@@ -143,11 +156,17 @@
       color: var(--ink);
     }
 
+    .section-head h2 i {
+      font-style: italic;
+      color: var(--rose-gold);
+      font-weight: 500;
+    }
+
     .section-head span {
+      font-family: 'Noto Serif JP', serif;
       font-size: 0.78rem;
       letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--ink-muted);
+      color: var(--rose-deep);
     }
 
     /* Rates & Terms */
@@ -160,20 +179,24 @@
     .rate-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 24px 20px;
-      transition: border-color 0.3s ease;
+      border-radius: 18px;
+      padding: 22px 20px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .rate-card:hover {
-      border-color: var(--gold);
+      transform: translateY(-3px);
+      border-color: var(--rose-gold);
+      box-shadow: 0 10px 26px rgba(183, 123, 142, 0.1);
     }
 
     .rate-label {
-      font-size: 0.75rem;
-      letter-spacing: 1.5px;
+      font-size: 0.74rem;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      color: var(--ink-muted);
-      margin-bottom: 8px;
+      color: var(--rose-deep);
+      font-weight: 600;
+      margin-bottom: 6px;
     }
 
     .rate-val {
@@ -181,7 +204,7 @@
       font-size: 2rem;
       font-weight: 600;
       color: var(--ink);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .rate-desc {
@@ -192,9 +215,10 @@
 
     .terms-bar {
       margin-top: 16px;
-      background: var(--bg-soft);
+      background: var(--bg-petal);
       border: 1px solid var(--border);
-      padding: 16px 24px;
+      border-radius: 16px;
+      padding: 15px 22px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -208,7 +232,7 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     .folder-tabs {
@@ -218,26 +242,28 @@
     }
 
     .folder-btn {
-      background: transparent;
+      background: var(--bg-card);
       border: 1px solid var(--border);
+      border-radius: 999px;
       color: var(--ink-muted);
       padding: 9px 18px;
       font-family: inherit;
       font-size: 0.8rem;
-      letter-spacing: 0.5px;
+      font-weight: 500;
       cursor: pointer;
       transition: all 0.25s ease;
     }
 
     .folder-btn:hover {
-      border-color: var(--ink);
+      border-color: var(--rose-gold);
       color: var(--ink);
     }
 
     .folder-btn.active {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: var(--bg-cream);
+      background: linear-gradient(135deg, #9C5E72, #7A4356);
+      border-color: #7A4356;
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(156, 94, 114, 0.28);
     }
 
     .search-row {
@@ -250,10 +276,11 @@
 
     .search-input {
       width: 100%;
-      max-width: 380px;
+      max-width: 400px;
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 11px 16px;
+      border-radius: 999px;
+      padding: 11px 20px;
       font-family: inherit;
       font-size: 0.85rem;
       color: var(--ink);
@@ -261,78 +288,100 @@
     }
 
     .search-input:focus {
-      border-color: var(--gold);
+      border-color: var(--rose-gold);
+      box-shadow: 0 0 0 3px rgba(183, 123, 142, 0.12);
     }
 
     .item-count {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--ink-muted);
     }
 
-    /* Catalog Grid (Clean Editorial Cards) */
+    /* Catalog Grid with Product Photos */
     .catalog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+      gap: 22px;
     }
 
     .item-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 22px;
+      border-radius: 20px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
     }
 
     .item-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(26, 24, 23, 0.05);
-      border-color: var(--gold);
+      transform: translateY(-4px);
+      border-color: var(--rose-gold);
+      box-shadow: 0 14px 32px rgba(183, 123, 142, 0.14);
     }
 
-    .item-top {
+    .item-photo-box {
+      position: relative;
+      height: 195px;
+      background: var(--bg-petal);
+      overflow: hidden;
+    }
+
+    .item-photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .item-card:hover .item-photo-box img {
+      transform: scale(1.05);
+    }
+
+    .item-fee-pill {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(6px);
+      border: 1px solid var(--border);
+      color: var(--rose-deep);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .item-body {
+      padding: 18px 20px 20px;
       display: flex;
+      flex-direction: column;
+      flex-grow: 1;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
     }
 
     .item-brand {
       font-size: 0.7rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--rose-deep);
       font-weight: 600;
-    }
-
-    .item-fee-badge {
-      font-size: 0.7rem;
-      color: var(--ink-muted);
-      background: var(--bg-soft);
-      padding: 2px 8px;
+      margin-bottom: 4px;
     }
 
     .item-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.28rem;
+      font-size: 1.3rem;
       font-weight: 600;
       line-height: 1.25;
       color: var(--ink);
-      margin-bottom: 8px;
-    }
-
-    .item-desc {
-      font-size: 0.8rem;
-      color: var(--ink-muted);
-      font-weight: 300;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .item-footer {
       border-top: 1px solid var(--border);
-      padding-top: 14px;
+      padding-top: 12px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -351,47 +400,78 @@
     }
 
     .btn-inquire {
-      background: transparent;
-      border: 1px solid var(--ink);
-      color: var(--ink);
-      padding: 7px 14px;
-      font-size: 0.75rem;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
+      background: var(--bg-petal);
+      border: 1px solid var(--rose-gold);
+      border-radius: 999px;
+      color: var(--rose-deep);
+      padding: 7px 15px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
       cursor: pointer;
       transition: all 0.2s ease;
       white-space: nowrap;
     }
 
     .btn-inquire:hover {
-      background: var(--ink);
-      color: var(--bg-cream);
+      background: var(--rose-deep);
+      color: #FFFFFF;
+    }
+
+    /* Expand All Collection CTA */
+    .expand-wrap {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .btn-expand {
+      background: var(--bg-card);
+      border: 1.5px solid var(--rose-gold);
+      color: var(--rose-deep);
+      padding: 13px 30px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(183, 123, 142, 0.12);
+    }
+
+    .btn-expand:hover {
+      background: linear-gradient(135deg, #9C5E72, #7A4356);
+      color: #FFFFFF;
+      border-color: #7A4356;
     }
 
     /* Calculator & Custom Request */
     .concierge-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
+      gap: 26px;
     }
 
     .panel {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      padding: 32px;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 8px 28px rgba(183, 123, 142, 0.06);
     }
 
     .panel h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
+      font-size: 1.65rem;
       font-weight: 600;
       margin-bottom: 6px;
+      color: var(--ink);
     }
 
     .panel p.lead {
       font-size: 0.84rem;
       color: var(--ink-muted);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       font-weight: 300;
     }
 
@@ -401,17 +481,19 @@
 
     .field label {
       display: block;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: var(--ink-muted);
+      color: var(--rose-deep);
+      font-weight: 600;
       margin-bottom: 6px;
     }
 
     .field input, .field select {
       width: 100%;
-      background: var(--bg-cream);
+      background: var(--bg-blush);
       border: 1px solid var(--border);
+      border-radius: 12px;
       padding: 11px 14px;
       font-family: inherit;
       font-size: 0.88rem;
@@ -420,11 +502,12 @@
     }
 
     .field input:focus, .field select:focus {
-      border-color: var(--gold);
+      border-color: var(--rose-gold);
     }
 
     .calc-summary {
-      background: var(--bg-soft);
+      background: var(--bg-petal);
+      border-radius: 14px;
       padding: 18px;
       margin-top: 18px;
     }
@@ -449,11 +532,12 @@
     }
 
     .upload-box {
-      border: 1px dashed var(--gold);
-      background: var(--bg-cream);
+      border: 1.5px dashed var(--rose-gold);
+      background: var(--bg-blush);
+      border-radius: 14px;
       padding: 14px;
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--ink-muted);
       cursor: pointer;
       display: block;
@@ -466,28 +550,31 @@
     #previewImg {
       max-width: 100%;
       max-height: 140px;
+      border-radius: 10px;
       margin: 10px auto 0;
       display: none;
     }
 
     .btn-line {
       width: 100%;
-      background: var(--ink);
-      color: var(--bg-cream);
+      background: linear-gradient(135deg, #9C5E72, #7A4356);
+      color: #FFFFFF;
       border: none;
+      border-radius: 999px;
       padding: 15px;
       font-family: inherit;
-      font-size: 0.82rem;
-      letter-spacing: 1.5px;
+      font-size: 0.84rem;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       margin-top: 16px;
-      transition: background 0.25s ease;
+      box-shadow: 0 8px 22px rgba(156, 94, 114, 0.25);
+      transition: transform 0.2s ease;
     }
 
     .btn-line:hover {
-      background: var(--gold);
+      transform: translateY(-2px);
     }
 
     footer {
@@ -495,33 +582,33 @@
       padding: 40px 24px 60px;
       border-top: 1px solid var(--border);
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--ink-muted);
     }
 
     footer a {
-      color: var(--ink);
-      text-decoration: underline;
+      color: var(--rose-deep);
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
 
-  <div class="top-bar">
-    Private Shopping Concierge • Tokyo — Paris — Jakarta • Direct LINE Appointment
+  <div class="top-ribbon">
+    🎀 Tokyo — Paris — Jakarta • Private Boutique & Archival Concierge • Direct LINE Order
   </div>
 
   <div class="container">
     <!-- HEADER -->
     <header>
-      <div class="eyebrow">Curated Archival & Boutique Sourcing</div>
+      <div class="jp-kicker">✿ 東京の贅沢 • GINZA & AOYAMA CURATION</div>
       <h1>Tokyo In <i>My</i> Suitcase</h1>
       <p class="subtitle">
-        Personal shopping dari Ginza, Aoyama, hingga Daikanyama. Dikurasi dari brand Jepang & internasional paling dicari dengan transparansi kurs langsung.
+        Personal shopping dikurasi khusus untuk pencinta estetika Jepang & Eropa—dari matcha Uji, skincare ikonik Ginza, hingga tas butik Aoyama dengan kurs langsung detik ini.
       </p>
 
       <div class="kurs-pill">
-        <span class="status-dot"></span>
+        <span class="pulse-petal"></span>
         <span>Live Exchange Rate:</span>
         <span class="kurs-num" id="liveRateDisplay">¥1 = Rp ...</span>
         <span class="kurs-time" id="rateTimestamp">Updating</span>
@@ -530,78 +617,85 @@
 
     <!-- FEE & TERMS -->
     <div class="section-head">
-      <h2>Commission & Terms</h2>
-      <span>Transparent Pricing Structure</span>
+      <h2>Commission <i>&</i> Terms</h2>
+      <span>料金システム • Transparent Rates</span>
     </div>
 
     <div class="rates-grid">
       <div class="rate-card">
-        <div class="rate-label">Food & Artisanal Snack</div>
+        <div class="rate-label">🍵 Food & Artisanal Snack</div>
         <div class="rate-val">30% – 35%</div>
         <div class="rate-desc">30% kemasan ringan, 35% item fragile atau bervolume besar.</div>
       </div>
       <div class="rate-card">
-        <div class="rate-label">Skincare & Beauty</div>
+        <div class="rate-label">🌸 Skincare & Beauty</div>
         <div class="rate-val">15% – 25%</div>
         <div class="rate-desc">15% skincare botol/jar reguler, 25% item drugstore/mini.</div>
       </div>
       <div class="rate-card">
-        <div class="rate-label">Footwear & Bags</div>
+        <div class="rate-label">🩰 Footwear & Bags</div>
         <div class="rate-val">25% – 30%</div>
         <div class="rate-desc">25% tanpa box asli, 30% lengkap dengan box store.</div>
       </div>
       <div class="rate-card">
-        <div class="rate-label">Ready-to-Wear (Baju)</div>
+        <div class="rate-label">🎀 Ready-to-Wear (Baju)</div>
         <div class="rate-val">15%</div>
-        <div class="rate-desc">Flat 15% untuk seluruh lini pakaian & kolaborasi Jepang.</div>
+        <div class="rate-desc">Flat 15% untuk seluruh lini pakaian & edisi khusus Jepang.</div>
       </div>
       <div class="rate-card">
-        <div class="rate-label">Luxury & Designer</div>
+        <div class="rate-label">💎 Luxury & Designer</div>
         <div class="rate-val">10% – 15%</div>
         <div class="rate-desc">Lengkap dengan dustbag, paperbag & salinan struk butik.</div>
       </div>
     </div>
 
     <div class="terms-bar">
-      <div><strong>Minimum Fee:</strong> Rp 15.000 / item (berlaku apabila kalkulasi persentase di bawah Rp 15.000).</div>
-      <div><strong>Privilege & Diskon:</strong> Mengikuti ketentuan promo aktif <em>Bellachérie</em>.</div>
+      <div><strong>✦ Minimum Fee:</strong> Rp 15.000 / item (berlaku apabila kalkulasi persentase di bawah Rp 15.000).</div>
+      <div><strong>✦ Privilege & Diskon:</strong> Mengikuti ketentuan promo aktif <em>Bellachérie</em>.</div>
     </div>
 
-    <!-- CURATED DIRECTORY (250 ITEMS / 50 PER CATEGORY) -->
+    <!-- CURATED DIRECTORY -->
     <div class="section-head">
-      <h2>Curated Osusume Directory</h2>
-      <span>250 Most-Searched Items • 50 per Category</span>
+      <h2>Curated <i>Osusume</i> Directory</h2>
+      <span>おすすめコレクション • 250 Curated Treasures</span>
     </div>
 
     <div class="controls-wrap">
       <div class="folder-tabs" id="folderTabs">
-        <button class="folder-btn active" data-cat="all">All Collections (250)</button>
-        <button class="folder-btn" data-cat="food">Food & Snack (50)</button>
-        <button class="folder-btn" data-cat="skincare">Skincare & Beauty (50)</button>
-        <button class="folder-btn" data-cat="shoesbag">Shoes & Bags (50)</button>
-        <button class="folder-btn" data-cat="clothes">Apparel / Baju (50)</button>
-        <button class="folder-btn" data-cat="luxury">Branded & Luxury (50)</button>
+        <button class="folder-btn active" data-cat="featured">✨ Editor's Top Picks (8)</button>
+        <button class="folder-btn" data-cat="food">🍵 Food & Snack (50)</button>
+        <button class="folder-btn" data-cat="skincare">🌸 Skincare & Beauty (50)</button>
+        <button class="folder-btn" data-cat="shoesbag">🩰 Shoes & Bags (50)</button>
+        <button class="folder-btn" data-cat="clothes">🎀 Apparel / Baju (50)</button>
+        <button class="folder-btn" data-cat="luxury">💎 Branded & Luxury (50)</button>
+        <button class="folder-btn" data-cat="all">📂 Unlock All 250 Items</button>
       </div>
 
       <div class="search-row">
-        <input type="text" id="searchInput" class="search-input" placeholder="Cari brand atau nama barang (misal: Loewe, Cle de Peau, Onitsuka, Royce)..." />
-        <div class="item-count" id="itemCountLabel">Menampilkan 250 pilihan terkurasi</div>
+        <input type="text" id="searchInput" class="search-input" placeholder="Cari brand atau barang (misal: Miu Miu, Royce, Cle de Peau, Onitsuka)..." />
+        <div class="item-count" id="itemCountLabel">Menampilkan 8 pilihan utama</div>
       </div>
     </div>
 
     <div class="catalog-grid" id="catalogGrid"></div>
 
+    <div class="expand-wrap" id="expandWrap">
+      <button type="button" class="btn-expand" id="unlockAllBtn">
+        Explore All 250 Curated Items ✦
+      </button>
+    </div>
+
     <!-- CALCULATOR & CONCIERGE REQUEST -->
     <div class="section-head">
-      <h2>Estimator & Private Request</h2>
-      <span>Direct LINE Concierge</span>
+      <h2>Estimator <i>&</i> Private Request</h2>
+      <span>オーダーフォーム • Direct LINE Concierge</span>
     </div>
 
     <div class="concierge-grid">
       <!-- CALCULATOR -->
       <div class="panel">
         <h3>Price Estimator</h3>
-        <p class="lead">Hitung estimasi harga Rupiah berdasarkan kurs detik ini beserta komisi jastip.</p>
+        <p class="lead">Simulasi otomatis harga Rupiah berdasarkan kurs detik ini beserta komisi jastip.</p>
 
         <div class="field">
           <label>Kategori Barang</label>
@@ -642,35 +736,35 @@
       <!-- CUSTOM REQUEST -->
       <div class="panel">
         <h3>Submit Custom Request</h3>
-        <p class="lead">Kirim detail barang atau foto referensi untuk pengecekan stok langsung di Tokyo.</p>
+        <p class="lead">Kirim detail barang atau lampirkan foto referensi untuk pengecekan stok di Tokyo.</p>
 
         <div class="field">
           <label>Brand & Nama Barang</label>
-          <input type="text" id="reqName" placeholder="Contoh: Loewe Puzzle Fold Tote Medium Warm Desert" />
+          <input type="text" id="reqName" placeholder="Contoh: Miu Miu Wander Matelassé Mini Bag" />
         </div>
 
         <div class="field">
           <label>Kategori, Warna & Ukuran</label>
-          <input type="text" id="reqNote" placeholder="Contoh: Luxury (10%), Warna Tan, 1 pcs" />
+          <input type="text" id="reqNote" placeholder="Contoh: Luxury (10%), Warna Cameo Beige, 1 pcs" />
         </div>
 
         <div class="field">
-          <label>Foto Referensi (Opsional)</label>
+          <label>Foto Referensi (Opsional — bisa lanjut tanpa foto)</label>
           <label class="upload-box" for="photoInput">
-            <span>Pilih gambar referensi dari perangkat (atau lanjut tanpa foto)</span>
+            <span>🌸 Klik untuk melampirkan foto referensi dari galeri</span>
             <input type="file" id="photoInput" accept="image/*" />
             <img id="previewImg" alt="Preview" />
           </label>
         </div>
 
         <button type="button" class="btn-line" id="sendToLineBtn">
-          Lanjut & Kirim ke LINE Concierge
+          Lanjut & Kirim ke LINE Concierge ↗
         </button>
       </div>
     </div>
 
     <footer>
-      <p>TOKYO IN MY SUITCASE — Curated Personal Shopping Service</p>
+      <p>TOKYO IN MY SUITCASE — Parisian-Tokyo Curated Concierge</p>
       <p style="margin-top:6px;">LINE Direct: <a href="https://line.me/ti/p/JxcFA9gakM" target="_blank">line.me/ti/p/JxcFA9gakM</a></p>
     </footer>
   </div>
@@ -679,274 +773,347 @@
     const LINE_URL = "https://line.me/ti/p/JxcFA9gakM";
     let currentJpyToIdr = 114;
 
+    // Curated Visual Photo Pools per Category & Sub-type
+    const photoPools = {
+      food_matcha: [
+        "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=600&q=80"
+      ],
+      food_sweet: [
+        "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80"
+      ],
+      food_ramen: [
+        "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=600&q=80"
+      ],
+      skincare_lux: [
+        "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=600&q=80"
+      ],
+      skincare_makeup: [
+        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80"
+      ],
+      shoes: [
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80"
+      ],
+      bags: [
+        "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=600&q=80"
+      ],
+      clothes: [
+        "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=600&q=80"
+      ],
+      luxury: [
+        "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80"
+      ]
+    };
+
+    function pickPhoto(cat, name, idx) {
+      const n = name.toLowerCase();
+      let pool = photoPools.luxury;
+      if (cat === "food") {
+        if (n.includes("matcha") || n.includes("tea") || n.includes("coffee")) pool = photoPools.food_matcha;
+        else if (n.includes("ramen") || n.includes("udon") || n.includes("curry") || n.includes("yakisoba")) pool = photoPools.food_ramen;
+        else pool = photoPools.food_sweet;
+      } else if (cat === "skincare") {
+        if (n.includes("powder") || n.includes("lip") || n.includes("cheek") || n.includes("mascara") || n.includes("eyeshadow") || n.includes("foundation")) pool = photoPools.skincare_makeup;
+        else pool = photoPools.skincare_lux;
+      } else if (cat === "shoesbag") {
+        if (idx < 20) pool = photoPools.shoes;
+        else pool = photoPools.bags;
+      } else if (cat === "clothes") {
+        pool = photoPools.clothes;
+      } else if (cat === "luxury") {
+        pool = photoPools.luxury;
+      }
+      return pool[idx % pool.length];
+    }
+
     // 50 POPULAR ITEMS PER CATEGORY (TOTAL 250 ITEMS)
     const rawCatalog = {
       food: [
-        ["Royce'", "Nama Chocolate Au Lait", 864, 0.35],
-        ["Royce'", "Nama Chocolate Matcha", 864, 0.35],
-        ["Royce'", "Potatochip Chocolate Original", 864, 0.35],
-        ["Tokyo Banana", "Original Custard 8 pcs", 1198, 0.30],
-        ["Shiroi Koibito", "White Chocolate Biscuits 18 pcs", 1555, 0.30],
-        ["NewYork Perfect Cheese", "Gouda & Cream Cheese Rolls 8 pcs", 1296, 0.30],
-        ["Press Butter Sand", "Original Caramel Butter Sandwich 9 pcs", 1944, 0.30],
-        ["Sugar Butter Sand Tree", "White Chocolate Cereal Sandwich 14 pcs", 1274, 0.30],
-        ["Yoku Moku", "Cigare Butter Cookies Tin 20 pcs", 1620, 0.30],
-        ["Ichiran", "Hakata Tonkotsu Ramen Box 5 Servings", 2200, 0.35],
-        ["Ippudo", "Shiromaru & Akamaru Ramen Gift Set", 2160, 0.35],
-        ["Marukyu Koyamaen", "Aoarashi Ceremonial Matcha 40g", 1620, 0.30],
-        ["Marukyu Koyamaen", "Isuzu Ceremonial Matcha 40g", 2160, 0.30],
-        ["Ippodo Tea", "Sayaka-no-mukashi Rich Matcha 40g", 2484, 0.30],
-        ["Ippodo Tea", "Ikuyo-no-mukashi Matcha 100g", 3240, 0.30],
-        ["Tsujiri", "Uji Matcha Milk Double Rich", 680, 0.30],
-        ["LeTAO", "Double Fromage Cheesecake (Cooler)", 2160, 0.35],
-        ["Audrey", "Glacia Strawberry Bouquet Cookies 8 pcs", 1296, 0.30],
-        ["Tulip Rose", "Tokyo Tulip Rose Berry & Passion 6 pcs", 1242, 0.30],
-        ["N.Y.C. Sand", "N.Y. Caramel Sand 8 pcs", 1512, 0.30],
-        ["Hiyoko", "Tokyo Hiyoko Chick Manju 9 pcs", 1350, 0.30],
-        ["Nenrinya", "Mount Baum Firm Baumkuchen", 1836, 0.30],
-        ["Jaga Pokkuru", "Hokkaido Premium Potato Sticks 10 bags", 1100, 0.30],
-        ["Rokkatei", "Marusei Butter Sandwich 10 pcs", 1550, 0.35],
-        ["KitKat Japan", "Uji Matcha & Hojicha Kyoto Edition", 950, 0.30],
-        ["KitKat Japan", "Tokyo Island Lemon / Strawberry Cheesecake", 950, 0.30],
-        ["Meiji", "Meltykiss Premium Matcha / Rum Raisin", 450, 0.30],
-        ["Bourbon", "Alfort Mini Chocolate Rich Milk & Matcha", 350, 0.30],
-        ["UHA Mikakuto", "Kororo Muscat & Kyoho Grape Gummy", 220, 0.30],
-        ["Orihiro", "Konjac Jelly Peach & Muscat Pouch", 280, 0.35],
-        ["Kameda Seika", "Kaki no Tane Wasabi & Cheese Mix", 380, 0.30],
-        ["Calbee", "Jagabee Butter Soy Sauce 5 packs", 450, 0.30],
-        ["Nissin", "Cup Noodle Seafood & Curry Japan Exclusive", 320, 0.35],
-        ["Nissin", "Donbei Kitsune Udon East Japan Edition", 320, 0.35],
-        ["Peyoung", "Sauce Yakisoba Giant Pack", 350, 0.35],
-        ["S&B", "Golden Curry Medium Hot & Wasabi Tube", 420, 0.30],
-        ["Kewpie", "Japanese Roasted Sesame Dressing 380ml", 520, 0.35],
-        ["Momoya", "Taberu Rayu Crispy Chili Oil", 480, 0.35],
-        ["Muji Japan", "Baumkuchen Banana & Matcha Cakes", 250, 0.30],
-        ["Muji Japan", "Butter Chicken & Keema Curry Pouch", 390, 0.35],
-        ["Pierre Hermé", "Made in Pierre Hermé Tokyo Macaron Box", 3456, 0.35],
-        ["Jean-Paul Hévin", "Tokyo Limited Bonbon Chocolat Box", 4320, 0.35],
-        ["Henri Charpentier", "Financier & Madeleine Assortment 16 pcs", 2376, 0.30],
-        ["Ginza Sembikiya", "Ginza Fruit Jelly Assortment 6 pcs", 3240, 0.35],
-        ["Toraya", "Mini Yokan Traditional Sweet Selection 10 pcs", 3240, 0.35],
-        ["Bunmeido", "Castella Honey Sponge Cake Gift Box", 1620, 0.30],
-        ["Pocky", "Giant Yubari Melon & Uji Matcha Stick", 1080, 0.30],
-        ["AGF Blendy", "Cafe Latory Rich Matcha Latte Sticks", 450, 0.30],
-        ["Starbucks Japan", "Origami Tokyo Roast Drip Coffee Box", 1150, 0.30],
-        ["Blue Bottle Japan", "Bella Donovan / Hayes Valley Whole Beans", 1944, 0.30]
+        ["Royce'", "Nama Chocolate Au Lait", 864, 0.35, true],
+        ["Royce'", "Nama Chocolate Matcha", 864, 0.35, false],
+        ["Royce'", "Potatochip Chocolate Original", 864, 0.35, false],
+        ["Tokyo Banana", "Original Custard 8 pcs", 1198, 0.30, false],
+        ["Shiroi Koibito", "White Chocolate Biscuits 18 pcs", 1555, 0.30, false],
+        ["NewYork Perfect Cheese", "Gouda & Cream Cheese Rolls 8 pcs", 1296, 0.30, false],
+        ["Press Butter Sand", "Original Caramel Butter Sandwich 9 pcs", 1944, 0.30, false],
+        ["Sugar Butter Sand Tree", "White Chocolate Cereal Sandwich 14 pcs", 1274, 0.30, false],
+        ["Yoku Moku", "Cigare Butter Cookies Tin 20 pcs", 1620, 0.30, false],
+        ["Ichiran", "Hakata Tonkotsu Ramen Box 5 Servings", 2200, 0.35, false],
+        ["Ippudo", "Shiromaru & Akamaru Ramen Gift Set", 2160, 0.35, false],
+        ["Marukyu Koyamaen", "Aoarashi Ceremonial Matcha 40g", 1620, 0.30, true],
+        ["Marukyu Koyamaen", "Isuzu Ceremonial Matcha 40g", 2160, 0.30, false],
+        ["Ippodo Tea", "Sayaka-no-mukashi Rich Matcha 40g", 2484, 0.30, false],
+        ["Ippodo Tea", "Ikuyo-no-mukashi Matcha 100g", 3240, 0.30, false],
+        ["Tsujiri", "Uji Matcha Milk Double Rich", 680, 0.30, false],
+        ["LeTAO", "Double Fromage Cheesecake (Cooler)", 2160, 0.35, false],
+        ["Audrey", "Glacia Strawberry Bouquet Cookies 8 pcs", 1296, 0.30, false],
+        ["Tulip Rose", "Tokyo Tulip Rose Berry & Passion 6 pcs", 1242, 0.30, false],
+        ["N.Y.C. Sand", "N.Y. Caramel Sand 8 pcs", 1512, 0.30, false],
+        ["Hiyoko", "Tokyo Hiyoko Chick Manju 9 pcs", 1350, 0.30, false],
+        ["Nenrinya", "Mount Baum Firm Baumkuchen", 1836, 0.30, false],
+        ["Jaga Pokkuru", "Hokkaido Premium Potato Sticks 10 bags", 1100, 0.30, false],
+        ["Rokkatei", "Marusei Butter Sandwich 10 pcs", 1550, 0.35, false],
+        ["KitKat Japan", "Uji Matcha & Hojicha Kyoto Edition", 950, 0.30, false],
+        ["KitKat Japan", "Tokyo Island Lemon / Strawberry Cheesecake", 950, 0.30, false],
+        ["Meiji", "Meltykiss Premium Matcha / Rum Raisin", 450, 0.30, false],
+        ["Bourbon", "Alfort Mini Chocolate Rich Milk & Matcha", 350, 0.30, false],
+        ["UHA Mikakuto", "Kororo Muscat & Kyoho Grape Gummy", 220, 0.30, false],
+        ["Orihiro", "Konjac Jelly Peach & Muscat Pouch", 280, 0.35, false],
+        ["Kameda Seika", "Kaki no Tane Wasabi & Cheese Mix", 380, 0.30, false],
+        ["Calbee", "Jagabee Butter Soy Sauce 5 packs", 450, 0.30, false],
+        ["Nissin", "Cup Noodle Seafood & Curry Japan Exclusive", 320, 0.35, false],
+        ["Nissin", "Donbei Kitsune Udon East Japan Edition", 320, 0.35, false],
+        ["Peyoung", "Sauce Yakisoba Giant Pack", 350, 0.35, false],
+        ["S&B", "Golden Curry Medium Hot & Wasabi Tube", 420, 0.30, false],
+        ["Kewpie", "Japanese Roasted Sesame Dressing 380ml", 520, 0.35, false],
+        ["Momoya", "Taberu Rayu Crispy Chili Oil", 480, 0.35, false],
+        ["Muji Japan", "Baumkuchen Banana & Matcha Cakes", 250, 0.30, false],
+        ["Muji Japan", "Butter Chicken & Keema Curry Pouch", 390, 0.35, false],
+        ["Pierre Hermé", "Made in Pierre Hermé Tokyo Macaron Box", 3456, 0.35, false],
+        ["Jean-Paul Hévin", "Tokyo Limited Bonbon Chocolat Box", 4320, 0.35, false],
+        ["Henri Charpentier", "Financier & Madeleine Assortment 16 pcs", 2376, 0.30, false],
+        ["Ginza Sembikiya", "Ginza Fruit Jelly Assortment 6 pcs", 3240, 0.35, false],
+        ["Toraya", "Mini Yokan Traditional Sweet Selection 10 pcs", 3240, 0.35, false],
+        ["Bunmeido", "Castella Honey Sponge Cake Gift Box", 1620, 0.30, false],
+        ["Pocky", "Giant Yubari Melon & Uji Matcha Stick", 1080, 0.30, false],
+        ["AGF Blendy", "Cafe Latory Rich Matcha Latte Sticks", 450, 0.30, false],
+        ["Starbucks Japan", "Origami Tokyo Roast Drip Coffee Box", 1150, 0.30, false],
+        ["Blue Bottle Japan", "Bella Donovan / Hayes Valley Whole Beans", 1944, 0.30, false]
       ],
       skincare: [
-        ["Clé de Peau Beauté", "The Serum 50ml", 27500, 0.15],
-        ["Clé de Peau Beauté", "Correcting Cream Veil Primer", 7700, 0.15],
-        ["Clé de Peau Beauté", "Radiant Fluid Foundation Natural", 14300, 0.15],
-        ["SK-II", "Facial Treatment Essence 230ml", 28050, 0.15],
-        ["SK-II", "GenOptics Ultraura Essence 50ml", 31350, 0.15],
-        ["Decorté", "Liposome Advanced Repair Serum 75ml", 16500, 0.15],
-        ["Decorté", "Loose Powder Translucent 00", 6050, 0.15],
-        ["Albion", "Skin Conditioner Essential N 330ml", 9350, 0.15],
-        ["IPSA", "The Time Reset Aqua 200ml", 4400, 0.15],
-        ["Shiseido", "Ultimune Power Infusing Concentrate 50ml", 13200, 0.15],
-        ["Shiseido", "Fino Premium Touch Hair Mask 230g", 1078, 0.15],
-        ["Shiseido", "Tsubaki Premium Repair Mask Gold", 1180, 0.15],
-        ["Anessa", "Perfect UV Sunscreen Skincare Milk 60ml", 3058, 0.15],
-        ["Biore UV", "Aqua Rich Watery Essence 70g", 968, 0.20],
-        ["Skin Aqua", "Tone Up UV Essence Lavender", 850, 0.20],
-        ["Canmake", "Mermaid Skin Gel UV 01 Clear", 770, 0.25],
-        ["Canmake", "Marshmallow Finish Powder Abloom", 1034, 0.25],
-        ["Canmake", "Cream Cheek Blush Pearl Type", 638, 0.25],
-        ["Cezanne", "Pearl Glow Highlight 01 Champagne Beige", 660, 0.25],
-        ["Heroine Make", "Long & Curl Mascara Advanced Film", 1320, 0.25],
-        ["Heroine Make", "Smooth Liquid Eyeliner Super Keep", 1100, 0.25],
-        ["UZU by Flowfushi", "Eye Opening Liner Brown Black", 1650, 0.25],
-        ["Kate Tokyo", "Lip Monster 03 / 05 / 14", 1540, 0.25],
-        ["Suqqu", "Signature Color Eyes Eyeshadow Palette", 7700, 0.15],
-        ["Suqqu", "The Liquid Foundation 30ml", 11000, 0.15],
-        ["Addiction Tokyo", "The Eyeshadow Sparkle 004SP Mariage", 2200, 0.20],
-        ["RMK", "Liquid Foundation Flawless Coverage", 6050, 0.15],
-        ["Three", "Balancing Cleansing Oil N 185ml", 4840, 0.15],
-        ["Shu Uemura", "Ultime8 Sublime Beauty Cleansing Oil 450ml", 14850, 0.15],
-        ["Shu Uemura", "Hard Formula Eyebrow Pencil Seal Brown", 3300, 0.20],
-        ["Hada Labo", "Gokujyun Premium Hyaluronic Lotion 170ml", 990, 0.15],
-        ["Melano CC", "Intensive Anti-Spot Essence 20ml", 1210, 0.25],
-        ["Rohto", "Lycee Contact Eye Drops", 770, 0.25],
-        ["Sante", "Beauteye Rose Fragrance Eye Drops", 1650, 0.25],
-        ["DHC", "Deep Cleansing Oil 200ml", 2720, 0.15],
-        ["DHC", "Lip Cream Extra Moisture", 770, 0.25],
-        ["Keana Nadeshiko", "Rice Mask 10 Sheets Pack", 715, 0.20],
-        ["LuLuLun", "Precious Red / Green Face Mask 32 Sheets", 1980, 0.15],
-        ["Quality 1st", "Derma Laser Super VC100 Mask 7 Sheets", 770, 0.20],
-        ["&honey", "Deep Moist Hair Oil 3.0 100ml", 1540, 0.15],
-        ["Milbon", "Elujuda FO / MO Hair Treatment Oil", 2860, 0.15],
-        ["Orbis", "Essence In Hair Milk 140g", 1320, 0.15],
-        ["Curél", "Intensive Moisture Facial Cream 40g", 2530, 0.15],
-        ["Minon", "Amino Moist Charge Milk 100g", 2200, 0.15],
-        ["Fancl", "Mild Cleansing Oil 120ml", 1870, 0.15],
-        ["Softymo", "Speedy Cleansing Oil 230ml", 680, 0.15],
-        ["Senka", "Perfect Whip Collagen In 120g", 590, 0.20],
-        ["Kao MegRhythm", "Steam Eye Mask Lavender / Unscented 12 pcs", 1180, 0.20],
-        ["Salonpas", "Hisamitsu Roihi-Tsuboko Coin Patch 156 pcs", 980, 0.25],
-        ["Shiro", "Savon / White Lily Eau de Parfum 40ml", 4180, 0.15]
+        ["Clé de Peau Beauté", "The Serum 50ml", 27500, 0.15, true],
+        ["Clé de Peau Beauté", "Correcting Cream Veil Primer", 7700, 0.15, false],
+        ["Clé de Peau Beauté", "Radiant Fluid Foundation Natural", 14300, 0.15, false],
+        ["SK-II", "Facial Treatment Essence 230ml", 28050, 0.15, false],
+        ["SK-II", "GenOptics Ultraura Essence 50ml", 31350, 0.15, false],
+        ["Decorté", "Liposome Advanced Repair Serum 75ml", 16500, 0.15, false],
+        ["Decorté", "Loose Powder Translucent 00", 6050, 0.15, false],
+        ["Albion", "Skin Conditioner Essential N 330ml", 9350, 0.15, false],
+        ["IPSA", "The Time Reset Aqua 200ml", 4400, 0.15, false],
+        ["Shiseido", "Ultimune Power Infusing Concentrate 50ml", 13200, 0.15, false],
+        ["Shiseido", "Fino Premium Touch Hair Mask 230g", 1078, 0.15, false],
+        ["Shiseido", "Tsubaki Premium Repair Mask Gold", 1180, 0.15, false],
+        ["Anessa", "Perfect UV Sunscreen Skincare Milk 60ml", 3058, 0.15, false],
+        ["Biore UV", "Aqua Rich Watery Essence 70g", 968, 0.20, false],
+        ["Skin Aqua", "Tone Up UV Essence Lavender", 850, 0.20, false],
+        ["Canmake", "Mermaid Skin Gel UV 01 Clear", 770, 0.25, false],
+        ["Canmake", "Marshmallow Finish Powder Abloom", 1034, 0.25, true],
+        ["Canmake", "Cream Cheek Blush Pearl Type", 638, 0.25, false],
+        ["Cezanne", "Pearl Glow Highlight 01 Champagne Beige", 660, 0.25, false],
+        ["Heroine Make", "Long & Curl Mascara Advanced Film", 1320, 0.25, false],
+        ["Heroine Make", "Smooth Liquid Eyeliner Super Keep", 1100, 0.25, false],
+        ["UZU by Flowfushi", "Eye Opening Liner Brown Black", 1650, 0.25, false],
+        ["Kate Tokyo", "Lip Monster 03 / 05 / 14", 1540, 0.25, false],
+        ["Suqqu", "Signature Color Eyes Eyeshadow Palette", 7700, 0.15, false],
+        ["Suqqu", "The Liquid Foundation 30ml", 11000, 0.15, false],
+        ["Addiction Tokyo", "The Eyeshadow Sparkle 004SP Mariage", 2200, 0.20, false],
+        ["RMK", "Liquid Foundation Flawless Coverage", 6050, 0.15, false],
+        ["Three", "Balancing Cleansing Oil N 185ml", 4840, 0.15, false],
+        ["Shu Uemura", "Ultime8 Sublime Beauty Cleansing Oil 450ml", 14850, 0.15, false],
+        ["Shu Uemura", "Hard Formula Eyebrow Pencil Seal Brown", 3300, 0.20, false],
+        ["Hada Labo", "Gokujyun Premium Hyaluronic Lotion 170ml", 990, 0.15, false],
+        ["Melano CC", "Intensive Anti-Spot Essence 20ml", 1210, 0.25, false],
+        ["Rohto", "Lycee Contact Eye Drops", 770, 0.25, false],
+        ["Sante", "Beauteye Rose Fragrance Eye Drops", 1650, 0.25, false],
+        ["DHC", "Deep Cleansing Oil 200ml", 2720, 0.15, false],
+        ["DHC", "Lip Cream Extra Moisture", 770, 0.25, false],
+        ["Keana Nadeshiko", "Rice Mask 10 Sheets Pack", 715, 0.20, false],
+        ["LuLuLun", "Precious Red / Green Face Mask 32 Sheets", 1980, 0.15, false],
+        ["Quality 1st", "Derma Laser Super VC100 Mask 7 Sheets", 770, 0.20, false],
+        ["&honey", "Deep Moist Hair Oil 3.0 100ml", 1540, 0.15, false],
+        ["Milbon", "Elujuda FO / MO Hair Treatment Oil", 2860, 0.15, false],
+        ["Orbis", "Essence In Hair Milk 140g", 1320, 0.15, false],
+        ["Curél", "Intensive Moisture Facial Cream 40g", 2530, 0.15, false],
+        ["Minon", "Amino Moist Charge Milk 100g", 2200, 0.15, false],
+        ["Fancl", "Mild Cleansing Oil 120ml", 1870, 0.15, false],
+        ["Softymo", "Speedy Cleansing Oil 230ml", 680, 0.15, false],
+        ["Senka", "Perfect Whip Collagen In 120g", 590, 0.20, false],
+        ["Kao MegRhythm", "Steam Eye Mask Lavender / Unscented 12 pcs", 1180, 0.20, false],
+        ["Salonpas", "Hisamitsu Roihi-Tsuboko Coin Patch 156 pcs", 980, 0.25, false],
+        ["Shiro", "Savon / White Lily Eau de Parfum 40ml", 4180, 0.15, false]
       ],
       shoesbag: [
-        ["Onitsuka Tiger", "Mexico 66 White / Directoire Blue", 15400, 0.25],
-        ["Onitsuka Tiger", "Mexico 66 SD Birch / Peacoat", 18700, 0.25],
-        ["Onitsuka Tiger", "Mexico 66 Kill Bill Yellow / Black", 15400, 0.25],
-        ["Onitsuka Tiger", "Dentigre LS Chunky Sneakers", 22000, 0.30],
-        ["Onitsuka Tiger", "Serrano Slip-On & Lace Sneakers", 13200, 0.25],
-        ["Asics", "Gel-Kayano 14 Cream / Black", 19800, 0.25],
-        ["Asics", "Gel-NYC Oyster Grey / Ivory", 17600, 0.25],
-        ["New Balance Japan", "U9060 Exclusive Japan Colorway", 22000, 0.25],
-        ["New Balance Japan", "M2002R Protection Pack", 19800, 0.25],
-        ["New Balance Japan", "990v6 Made in USA Grey", 36300, 0.30],
-        ["Salomon", "XT-6 Gore-Tex Black / Silver", 31900, 0.25],
-        ["Salomon", "ACS Pro Vanilla Ice / Lunar Rock", 33000, 0.25],
-        ["Adidas Japan", "Samba OG Cloud White / Core Black", 15400, 0.25],
-        ["Adidas Japan", "Gazelle Indoor Collegiate Green", 16500, 0.25],
-        ["Converse Japan", "All Star Made in Japan Canvas Hi", 14850, 0.25],
-        ["Converse Japan", "Addict Chuck Taylor Canvas Ox", 19800, 0.30],
-        ["Nike Japan", "Air Force 1 '07 Japan Exclusive", 16500, 0.25],
-        ["Nike Japan", "Vomero 5 Neutral Olive / Sail", 21450, 0.25],
-        ["Mizuno", "Wave Prophecy LS Black", 27500, 0.25],
-        ["Hoka", "Bondi 8 / Clifton 9 Triple Black", 25300, 0.25],
-        ["Porter Yoshida", "Tanker 2Way Helmet Bag Black", 39600, 0.25],
-        ["Porter Yoshida", "Tanker Shoulder Bag (S) Sage Green", 25850, 0.25],
-        ["Porter Yoshida", "Force 2Way Waist Bag Navy", 27500, 0.25],
-        ["Bao Bao Issey Miyake", "Lucent Matte Tote Bag 6x6", 46200, 0.25],
-        ["Bao Bao Issey Miyake", "Prism Metallic Tote 10x10", 68200, 0.25],
-        ["Pleats Please", "Fluffy Basics Pleated Shoulder Bag", 26400, 0.25],
-        ["A.P.C.", "Demi-Lune Smooth Leather Crossbody", 64900, 0.30],
-        ["A.P.C.", "Lou Tote Bag Indigo Denim", 16500, 0.25],
-        ["Maison Kitsuné", "Fox Head Canvas Tote Bag Ecru", 13200, 0.25],
-        ["MM6 Maison Margiela", "Japanese Bag Classic Mesh Medium", 44000, 0.25],
-        ["MM6 Maison Margiela", "Japanese Bag Mini Faux Leather", 52800, 0.25],
-        ["Comme des Garçons", "Huge Logo Leather Pouch / Clutch", 24200, 0.25],
-        ["Comme des Garçons", "Classic Leather Zip Around Wallet", 28600, 0.25],
-        ["Yohji Yamamoto", "Discord Y's Clasp Leather Shoulder Bag", 66000, 0.30],
-        ["Anello", "Cross Bottle Mouthpiece Backpack Regular", 5390, 0.25],
-        ["Master-Piece", "Potential Ver.2 Waterproof Backpack", 42900, 0.30],
-        ["Manhattan Portage", "Tokyo Limited Messenger Bag", 12100, 0.25],
-        ["F/CE.", "950 Travel BP Cordura Nylon", 26400, 0.30],
-        ["Uniqlo", "Round Mini Shoulder Bag Nylon", 1500, 0.25],
-        ["GU Japan", "Gather Pocket Bag / Faux Leather Boston", 2990, 0.25],
-        ["Samantha Thavasa", "Petit Choice Ribbon Card Holder", 14300, 0.25],
-        ["Tsuchiya Kaban", "Tone Oilnume Zip Top Shoulder", 63800, 0.30],
-        ["Herz", "Organ Handmade Leather Satchel", 48400, 0.30],
-        ["Gentle Monster", "Lilit 01 / Lang 01 Sunglasses", 34100, 0.25],
-        ["Eyevan 7285", "Model 319 Titanium & Acetate Frame", 58300, 0.25],
-        ["Kaneko Optical", "Celluloid Handmade Eyeglasses", 41800, 0.25],
-        ["Jins Japan", "Airframe Minimal Titanium + Blue Cut", 9900, 0.25],
-        ["Zoff Japan", "Classic Boston Frame + UV Lens", 8800, 0.25],
-        ["Muji Japan", "Water-Repellent Backpack Black", 3990, 0.25],
-        ["Dean & Deluca", "Tokyo Limited Canvas Tote Bag L", 3080, 0.25]
+        ["Onitsuka Tiger", "Mexico 66 White / Directoire Blue", 15400, 0.25, true],
+        ["Onitsuka Tiger", "Mexico 66 SD Birch / Peacoat", 18700, 0.25, false],
+        ["Onitsuka Tiger", "Mexico 66 Kill Bill Yellow / Black", 15400, 0.25, false],
+        ["Onitsuka Tiger", "Dentigre LS Chunky Sneakers", 22000, 0.30, false],
+        ["Onitsuka Tiger", "Serrano Slip-On & Lace Sneakers", 13200, 0.25, false],
+        ["Asics", "Gel-Kayano 14 Cream / Black", 19800, 0.25, false],
+        ["Asics", "Gel-NYC Oyster Grey / Ivory", 17600, 0.25, false],
+        ["New Balance Japan", "U9060 Exclusive Japan Colorway", 22000, 0.25, false],
+        ["New Balance Japan", "M2002R Protection Pack", 19800, 0.25, false],
+        ["New Balance Japan", "990v6 Made in USA Grey", 36300, 0.30, false],
+        ["Salomon", "XT-6 Gore-Tex Black / Silver", 31900, 0.25, false],
+        ["Salomon", "ACS Pro Vanilla Ice / Lunar Rock", 33000, 0.25, false],
+        ["Adidas Japan", "Samba OG Cloud White / Core Black", 15400, 0.25, false],
+        ["Adidas Japan", "Gazelle Indoor Collegiate Green", 16500, 0.25, false],
+        ["Converse Japan", "All Star Made in Japan Canvas Hi", 14850, 0.25, false],
+        ["Converse Japan", "Addict Chuck Taylor Canvas Ox", 19800, 0.30, false],
+        ["Nike Japan", "Air Force 1 '07 Japan Exclusive", 16500, 0.25, false],
+        ["Nike Japan", "Vomero 5 Neutral Olive / Sail", 21450, 0.25, false],
+        ["Mizuno", "Wave Prophecy LS Black", 27500, 0.25, false],
+        ["Hoka", "Bondi 8 / Clifton 9 Triple Black", 25300, 0.25, false],
+        ["Porter Yoshida", "Tanker 2Way Helmet Bag Black", 39600, 0.25, false],
+        ["Porter Yoshida", "Tanker Shoulder Bag (S) Sage Green", 25850, 0.25, false],
+        ["Porter Yoshida", "Force 2Way Waist Bag Navy", 27500, 0.25, false],
+        ["Bao Bao Issey Miyake", "Lucent Matte Tote Bag 6x6", 46200, 0.25, true],
+        ["Bao Bao Issey Miyake", "Prism Metallic Tote 10x10", 68200, 0.25, false],
+        ["Pleats Please", "Fluffy Basics Pleated Shoulder Bag", 26400, 0.25, false],
+        ["A.P.C.", "Demi-Lune Smooth Leather Crossbody", 64900, 0.30, false],
+        ["A.P.C.", "Lou Tote Bag Indigo Denim", 16500, 0.25, false],
+        ["Maison Kitsuné", "Fox Head Canvas Tote Bag Ecru", 13200, 0.25, false],
+        ["MM6 Maison Margiela", "Japanese Bag Classic Mesh Medium", 44000, 0.25, false],
+        ["MM6 Maison Margiela", "Japanese Bag Mini Faux Leather", 52800, 0.25, false],
+        ["Comme des Garçons", "Huge Logo Leather Pouch / Clutch", 24200, 0.25, false],
+        ["Comme des Garçons", "Classic Leather Zip Around Wallet", 28600, 0.25, false],
+        ["Yohji Yamamoto", "Discord Y's Clasp Leather Shoulder Bag", 66000, 0.30, false],
+        ["Anello", "Cross Bottle Mouthpiece Backpack Regular", 5390, 0.25, false],
+        ["Master-Piece", "Potential Ver.2 Waterproof Backpack", 42900, 0.30, false],
+        ["Manhattan Portage", "Tokyo Limited Messenger Bag", 12100, 0.25, false],
+        ["F/CE.", "950 Travel BP Cordura Nylon", 26400, 0.30, false],
+        ["Uniqlo", "Round Mini Shoulder Bag Nylon", 1500, 0.25, false],
+        ["GU Japan", "Gather Pocket Bag / Faux Leather Boston", 2990, 0.25, false],
+        ["Samantha Thavasa", "Petit Choice Ribbon Card Holder", 14300, 0.25, false],
+        ["Tsuchiya Kaban", "Tone Oilnume Zip Top Shoulder", 63800, 0.30, false],
+        ["Herz", "Organ Handmade Leather Satchel", 48400, 0.30, false],
+        ["Gentle Monster", "Lilit 01 / Lang 01 Sunglasses", 34100, 0.25, false],
+        ["Eyevan 7285", "Model 319 Titanium & Acetate Frame", 58300, 0.25, false],
+        ["Kaneko Optical", "Celluloid Handmade Eyeglasses", 41800, 0.25, false],
+        ["Jins Japan", "Airframe Minimal Titanium + Blue Cut", 9900, 0.25, false],
+        ["Zoff Japan", "Classic Boston Frame + UV Lens", 8800, 0.25, false],
+        ["Muji Japan", "Water-Repellent Backpack Black", 3990, 0.25, false],
+        ["Dean & Deluca", "Tokyo Limited Canvas Tote Bag L", 3080, 0.25, false]
       ],
       clothes: [
-        ["Comme des Garçons PLAY", "Red Heart Emblem Cotton T-Shirt", 11550, 0.15],
-        ["Comme des Garçons PLAY", "Black Heart Striped Long Sleeve Tee", 16500, 0.15],
-        ["Comme des Garçons PLAY", "Double Heart Wool V-Neck Cardigan", 36300, 0.15],
-        ["Comme des Garçons PLAY", "Zip-Up Hooded Sweatshirt Grey", 29700, 0.15],
-        ["Human Made", "Graphic Dry Alls Heavyweight Tee", 11000, 0.15],
-        ["Human Made", "Heart Logo Sweatshirt / Hoodie", 30800, 0.15],
-        ["BAPE (A Bathing Ape)", "College Logo Tee Japan Exclusive", 9900, 0.15],
-        ["BAPE (A Bathing Ape)", "Shark Full Zip Hoodie", 41800, 0.15],
-        ["Neighborhood", "NH Classic Pocket Tee Black", 9900, 0.15],
-        ["WTAPS", "Academy Cotton Jersey Tee", 11000, 0.15],
-        ["Needles", "Track Pant Poly Smooth Narrow", 23100, 0.15],
-        ["Needles", "Mohair Cardigan Papillon Pattern", 31900, 0.15],
-        ["Kapital", "Bone Print Tee / Smile Crewneck", 18480, 0.15],
-        ["Issey Miyake", "Homme Plissé Basics Pleated Trousers", 36300, 0.15],
-        ["Issey Miyake", "Pleats Please Monthly Colors Top", 29700, 0.15],
-        ["Sacai", "Nylon Twill Mix Blouson Jacket", 99000, 0.15],
-        ["Kolor", "Asymmetric Docking Knit Pullover", 53900, 0.15],
-        ["Yohji Yamamoto", "Ground Y Cotton Graphic Long Tee", 17600, 0.15],
-        ["Maison Kitsuné", "Chillax Fox Patch Classic Tee", 17600, 0.15],
-        ["Maison Kitsuné", "Baby Fox Patch Ribbed Cardigan", 39600, 0.15],
-        ["A.P.C.", "VPC Velvet Flocked Logo Sweatshirt", 29700, 0.15],
-        ["A.P.C.", "Petit New Standard Raw Selvedge Denim", 27500, 0.15],
-        ["Ami Paris", "Ami de Coeur Organic Cotton Tee", 22000, 0.15],
-        ["Ami Paris", "Ami de Coeur Merino Wool Sweater", 57200, 0.15],
-        ["Acne Studios", "1996 Logo Stamp Relaxed Tee", 36300, 0.15],
-        ["Acne Studios", "Canada New Fringed Wool Scarf", 31900, 0.15],
-        ["Onitsuka Tiger", "Track Top Jacket Embroidered Tiger", 19800, 0.15],
-        ["The North Face Purple Label", "7oz Pocket Tee Nanamica Exclusive", 9900, 0.15],
-        ["The North Face Purple Label", "65/35 Mountain Short Down Parka", 69300, 0.15],
-        ["Snow Peak", "Takibi FR Ripstop Down Jacket", 52800, 0.15],
-        ["Montbell Japan", "Superior Down Round Neck Jacket", 14850, 0.15],
-        ["Montbell Japan", "Plasma 1000 Alpine Down Parka", 28600, 0.15],
-        ["Uniqlo Japan", "Uniqlo : C Cashmere Crew Neck Sweater", 12900, 0.15],
-        ["Uniqlo Japan", "Ultra Light Down Compact Vest", 4990, 0.15],
-        ["Uniqlo Japan", "UT Archive / Studio Ghibli Exclusive Tee", 1500, 0.15],
-        ["Uniqlo Japan", "Heattech Extra Warm Cashmere Blend", 2290, 0.15],
-        ["GU Japan", "Barrel Leg Jeans & Heavyweight Sweat", 2990, 0.15],
-        ["Beams Japan", "Loopwheel Heavyweight Crew Sweat", 16500, 0.15],
-        ["United Arrows", "Beauty & Youth Wool Chesterfield Coat", 39600, 0.15],
-        ["Journal Standard", "Lessage Tweed Cropped Jacket", 35200, 0.15],
-        ["Snidel", "Organza Frill Blouse / Knit Dress", 15950, 0.15],
-        ["Gelato Pique", "Smoothie Border Loungewear Set", 13200, 0.15],
-        ["Fray I.D", "Satin Bias Cut Midi Skirt", 17600, 0.15],
-        ["Moussy", "MVS Flare Vintage Wash Jeans", 18480, 0.15],
-        ["Evisu Japan", "Daicock Print Selvedge Denim Jeans", 44000, 0.15],
-        ["Momotaro Jeans", "Going to Battle Stripe Selvedge", 29700, 0.15],
-        ["Studio D'Artisan", "15oz Regular Straight Selvedge", 28380, 0.15],
-        ["Warehouse & Co.", "Lot 4601 Loopwheel Pocket Tee", 7150, 0.15],
-        ["Loopwheeler", "LW01 Classic Loopwheel Sweatshirt", 22000, 0.15],
-        ["Wacko Maria", "Guilty Parties Hawaiian Aloha Shirt", 38500, 0.15]
+        ["Comme des Garçons PLAY", "Red Heart Emblem Cotton T-Shirt", 11550, 0.15, true],
+        ["Comme des Garçons PLAY", "Black Heart Striped Long Sleeve Tee", 16500, 0.15, false],
+        ["Comme des Garçons PLAY", "Double Heart Wool V-Neck Cardigan", 36300, 0.15, false],
+        ["Comme des Garçons PLAY", "Zip-Up Hooded Sweatshirt Grey", 29700, 0.15, false],
+        ["Human Made", "Graphic Dry Alls Heavyweight Tee", 11000, 0.15, false],
+        ["Human Made", "Heart Logo Sweatshirt / Hoodie", 30800, 0.15, false],
+        ["BAPE (A Bathing Ape)", "College Logo Tee Japan Exclusive", 9900, 0.15, false],
+        ["BAPE (A Bathing Ape)", "Shark Full Zip Hoodie", 41800, 0.15, false],
+        ["Neighborhood", "NH Classic Pocket Tee Black", 9900, 0.15, false],
+        ["WTAPS", "Academy Cotton Jersey Tee", 11000, 0.15, false],
+        ["Needles", "Track Pant Poly Smooth Narrow", 23100, 0.15, false],
+        ["Needles", "Mohair Cardigan Papillon Pattern", 31900, 0.15, false],
+        ["Kapital", "Bone Print Tee / Smile Crewneck", 18480, 0.15, false],
+        ["Issey Miyake", "Homme Plissé Basics Pleated Trousers", 36300, 0.15, false],
+        ["Issey Miyake", "Pleats Please Monthly Colors Top", 29700, 0.15, false],
+        ["Sacai", "Nylon Twill Mix Blouson Jacket", 99000, 0.15, false],
+        ["Kolor", "Asymmetric Docking Knit Pullover", 53900, 0.15, false],
+        ["Yohji Yamamoto", "Ground Y Cotton Graphic Long Tee", 17600, 0.15, false],
+        ["Maison Kitsuné", "Chillax Fox Patch Classic Tee", 17600, 0.15, false],
+        ["Maison Kitsuné", "Baby Fox Patch Ribbed Cardigan", 39600, 0.15, false],
+        ["A.P.C.", "VPC Velvet Flocked Logo Sweatshirt", 29700, 0.15, false],
+        ["A.P.C.", "Petit New Standard Raw Selvedge Denim", 27500, 0.15, false],
+        ["Ami Paris", "Ami de Coeur Organic Cotton Tee", 22000, 0.15, false],
+        ["Ami Paris", "Ami de Coeur Merino Wool Sweater", 57200, 0.15, false],
+        ["Acne Studios", "1996 Logo Stamp Relaxed Tee", 36300, 0.15, false],
+        ["Acne Studios", "Canada New Fringed Wool Scarf", 31900, 0.15, false],
+        ["Onitsuka Tiger", "Track Top Jacket Embroidered Tiger", 19800, 0.15, false],
+        ["The North Face Purple Label", "7oz Pocket Tee Nanamica Exclusive", 9900, 0.15, false],
+        ["The North Face Purple Label", "65/35 Mountain Short Down Parka", 69300, 0.15, false],
+        ["Snow Peak", "Takibi FR Ripstop Down Jacket", 52800, 0.15, false],
+        ["Montbell Japan", "Superior Down Round Neck Jacket", 14850, 0.15, false],
+        ["Montbell Japan", "Plasma 1000 Alpine Down Parka", 28600, 0.15, false],
+        ["Uniqlo Japan", "Uniqlo : C Cashmere Crew Neck Sweater", 12900, 0.15, false],
+        ["Uniqlo Japan", "Ultra Light Down Compact Vest", 4990, 0.15, false],
+        ["Uniqlo Japan", "UT Archive / Studio Ghibli Exclusive Tee", 1500, 0.15, false],
+        ["Uniqlo Japan", "Heattech Extra Warm Cashmere Blend", 2290, 0.15, false],
+        ["GU Japan", "Barrel Leg Jeans & Heavyweight Sweat", 2990, 0.15, false],
+        ["Beams Japan", "Loopwheel Heavyweight Crew Sweat", 16500, 0.15, false],
+        ["United Arrows", "Beauty & Youth Wool Chesterfield Coat", 39600, 0.15, false],
+        ["Journal Standard", "Lessage Tweed Cropped Jacket", 35200, 0.15, false],
+        ["Snidel", "Organza Frill Blouse / Knit Dress", 15950, 0.15, false],
+        ["Gelato Pique", "Smoothie Border Loungewear Set", 13200, 0.15, false],
+        ["Fray I.D", "Satin Bias Cut Midi Skirt", 17600, 0.15, false],
+        ["Moussy", "MVS Flare Vintage Wash Jeans", 18480, 0.15, false],
+        ["Evisu Japan", "Daicock Print Selvedge Denim Jeans", 44000, 0.15, false],
+        ["Momotaro Jeans", "Going to Battle Stripe Selvedge", 29700, 0.15, false],
+        ["Studio D'Artisan", "15oz Regular Straight Selvedge", 28380, 0.15, false],
+        ["Warehouse & Co.", "Lot 4601 Loopwheel Pocket Tee", 7150, 0.15, false],
+        ["Loopwheeler", "LW01 Classic Loopwheel Sweatshirt", 22000, 0.15, false],
+        ["Wacko Maria", "Guilty Parties Hawaiian Aloha Shirt", 38500, 0.15, false]
       ],
       luxury: [
-        ["Loewe", "Puzzle Fold Tote Medium Warm Desert", 253000, 0.10],
-        ["Loewe", "Hammock Compact Bag Tan / Sand", 374000, 0.10],
-        ["Loewe", "Anagram Pebble Bucket Bag Small", 286000, 0.10],
-        ["Loewe", "Mohair & Wool Anagram Scarf White", 47300, 0.12],
-        ["Loewe", "Anagram Brooch Palladium / Gold", 49500, 0.12],
-        ["Celine", "Triomphe Canvas Ava Bag Tan", 236500, 0.10],
-        ["Celine", "Classique Triomphe Shiny Calfskin Black", 572000, 0.10],
-        ["Celine", "Small Cabas Thais Striped Textile", 225500, 0.10],
-        ["Celine", "Triomphe Leather Belt 2.5cm Black", 89100, 0.12],
-        ["Celine", "Triomphe Baseball Cap Cotton", 75900, 0.12],
-        ["Miu Miu", "Arcadie Matelassé Nappa Leather Bag", 429000, 0.10],
-        ["Miu Miu", "Wander Matelassé Hobo Mini Bag", 319000, 0.10],
-        ["Miu Miu", "Aventure Nappa Leather Top-Handle", 517000, 0.10],
-        ["Miu Miu", "Metal Logo Hair Clip / Headband", 61600, 0.12],
-        ["Miu Miu", "New Balance x Miu Miu 530 SL Suede", 165000, 0.12],
-        ["Prada", "Re-Nylon Re-Edition 2005 Shoulder Bag", 269500, 0.10],
-        ["Prada", "Galleria Saffiano Leather Mini Bag", 517000, 0.10],
-        ["Prada", "Downtown Leather Sneakers White", 159500, 0.12],
-        ["Prada", "Enamel Triangle Logo Bucket Hat", 96800, 0.12],
-        ["Chanel", "Classic Small Flap Wallet Caviar", 162800, 0.10],
-        ["Chanel", "Classic Card Holder Caviar Gold HW", 95700, 0.10],
-        ["Chanel", "Chanel 22 Small Handbag Calfskin", 858000, 0.10],
-        ["Chanel", "Coco Crush Ring 18K Beige Gold", 242000, 0.10],
-        ["Hermès", "Oran Sandals Box Calfskin Gold / Noir", 118800, 0.12],
-        ["Hermès", "Chypre Sandals Epsom Calfskin", 148500, 0.12],
-        ["Hermès", "Calvi Duo Card Holder Epsom", 79200, 0.12],
-        ["Hermès", "Twilly Silk Ribbon Scarf Current Season", 36300, 0.12],
-        ["Hermès", "Pop H Mini Earrings & Pendant", 74800, 0.12],
-        ["Louis Vuitton", "Speedy Bandoulière 20 Monogram", 313500, 0.10],
-        ["Louis Vuitton", "Neverfull MM Damier Ebene / Azur", 286000, 0.10],
-        ["Louis Vuitton", "Pochette Accessoires Monogram", 225500, 0.10],
-        ["Louis Vuitton", "Rosalie Coin Purse Monogram Empreinte", 68200, 0.12],
-        ["Dior", "Lady Dior My ABCDior Small Cannage", 860000, 0.10],
-        ["Dior", "Saddle Bag with Strap Grained Calfskin", 620000, 0.10],
-        ["Dior", "Book Tote Medium Toile de Jouy", 460000, 0.10],
-        ["Dior", "30 Montaigne Reversible Belt", 98000, 0.12],
-        ["Goyard", "Saint Louis PM Tote Black / Tan", 265000, 0.10],
-        ["Goyard", "Anjou Mini Reversible Tote Bag", 395000, 0.10],
-        ["Goyard", "Saint Sulpice Card Wallet", 69000, 0.12],
-        ["Bottega Veneta", "Andiamo Small Intrecciato Fondant", 605000, 0.10],
-        ["Bottega Veneta", "Cassette Candy Crossbody Bag", 231000, 0.10],
-        ["Bottega Veneta", "Drop Earrings 18K Gold Finish", 99000, 0.12],
-        ["Saint Laurent", "Le 5 à 7 Supple Small Grained Leather", 346500, 0.10],
-        ["Saint Laurent", "Cassandre Matelassé Card Case", 57200, 0.12],
-        ["Balenciaga", "Rodeo Medium Handbag Smooth Calfskin", 572000, 0.10],
-        ["Balenciaga", "Le Cagole XS Shoulder Bag", 352000, 0.10],
-        ["Maison Margiela", "5AC Classique Mini Bag", 297000, 0.10],
-        ["Maison Margiela", "Tabi Mary-Jane / Ballerina Shoes", 132000, 0.12],
-        ["Van Cleef & Arpels", "Vintage Alhambra Pendant Onyx / MOP", 434500, 0.10],
-        ["Cartier", "Tank Must Watch Small Steel", 511500, 0.10]
+        ["Loewe", "Puzzle Fold Tote Medium Warm Desert", 253000, 0.10, true],
+        ["Loewe", "Hammock Compact Bag Tan / Sand", 374000, 0.10, false],
+        ["Loewe", "Anagram Pebble Bucket Bag Small", 286000, 0.10, false],
+        ["Loewe", "Mohair & Wool Anagram Scarf White", 47300, 0.12, false],
+        ["Loewe", "Anagram Brooch Palladium / Gold", 49500, 0.12, false],
+        ["Celine", "Triomphe Canvas Ava Bag Tan", 236500, 0.10, false],
+        ["Celine", "Classique Triomphe Shiny Calfskin Black", 572000, 0.10, false],
+        ["Celine", "Small Cabas Thais Striped Textile", 225500, 0.10, false],
+        ["Celine", "Triomphe Leather Belt 2.5cm Black", 89100, 0.12, false],
+        ["Celine", "Triomphe Baseball Cap Cotton", 75900, 0.12, false],
+        ["Miu Miu", "Arcadie Matelassé Nappa Leather Bag", 429000, 0.10, true],
+        ["Miu Miu", "Wander Matelassé Hobo Mini Bag", 319000, 0.10, false],
+        ["Miu Miu", "Aventure Nappa Leather Top-Handle", 517000, 0.10, false],
+        ["Miu Miu", "Metal Logo Hair Clip / Headband", 61600, 0.12, false],
+        ["Miu Miu", "New Balance x Miu Miu 530 SL Suede", 165000, 0.12, false],
+        ["Prada", "Re-Nylon Re-Edition 2005 Shoulder Bag", 269500, 0.10, false],
+        ["Prada", "Galleria Saffiano Leather Mini Bag", 517000, 0.10, false],
+        ["Prada", "Downtown Leather Sneakers White", 159500, 0.12, false],
+        ["Prada", "Enamel Triangle Logo Bucket Hat", 96800, 0.12, false],
+        ["Chanel", "Classic Small Flap Wallet Caviar", 162800, 0.10, false],
+        ["Chanel", "Classic Card Holder Caviar Gold HW", 95700, 0.10, false],
+        ["Chanel", "Chanel 22 Small Handbag Calfskin", 858000, 0.10, false],
+        ["Chanel", "Coco Crush Ring 18K Beige Gold", 242000, 0.10, false],
+        ["Hermès", "Oran Sandals Box Calfskin Gold / Noir", 118800, 0.12, false],
+        ["Hermès", "Chypre Sandals Epsom Calfskin", 148500, 0.12, false],
+        ["Hermès", "Calvi Duo Card Holder Epsom", 79200, 0.12, false],
+        ["Hermès", "Twilly Silk Ribbon Scarf Current Season", 36300, 0.12, false],
+        ["Hermès", "Pop H Mini Earrings & Pendant", 74800, 0.12, false],
+        ["Louis Vuitton", "Speedy Bandoulière 20 Monogram", 313500, 0.10, false],
+        ["Louis Vuitton", "Neverfull MM Damier Ebene / Azur", 286000, 0.10, false],
+        ["Louis Vuitton", "Pochette Accessoires Monogram", 225500, 0.10, false],
+        ["Louis Vuitton", "Rosalie Coin Purse Monogram Empreinte", 68200, 0.12, false],
+        ["Dior", "Lady Dior My ABCDior Small Cannage", 860000, 0.10, false],
+        ["Dior", "Saddle Bag with Strap Grained Calfskin", 620000, 0.10, false],
+        ["Dior", "Book Tote Medium Toile de Jouy", 460000, 0.10, false],
+        ["Dior", "30 Montaigne Reversible Belt", 98000, 0.12, false],
+        ["Goyard", "Saint Louis PM Tote Black / Tan", 265000, 0.10, false],
+        ["Goyard", "Anjou Mini Reversible Tote Bag", 395000, 0.10, false],
+        ["Goyard", "Saint Sulpice Card Wallet", 69000, 0.12, false],
+        ["Bottega Veneta", "Andiamo Small Intrecciato Fondant", 605000, 0.10, false],
+        ["Bottega Veneta", "Cassette Candy Crossbody Bag", 231000, 0.10, false],
+        ["Bottega Veneta", "Drop Earrings 18K Gold Finish", 99000, 0.12, false],
+        ["Saint Laurent", "Le 5 à 7 Supple Small Grained Leather", 346500, 0.10, false],
+        ["Saint Laurent", "Cassandre Matelassé Card Case", 57200, 0.12, false],
+        ["Balenciaga", "Rodeo Medium Handbag Smooth Calfskin", 572000, 0.10, false],
+        ["Balenciaga", "Le Cagole XS Shoulder Bag", 352000, 0.10, false],
+        ["Maison Margiela", "5AC Classique Mini Bag", 297000, 0.10, false],
+        ["Maison Margiela", "Tabi Mary-Jane / Ballerina Shoes", 132000, 0.12, false],
+        ["Van Cleef & Arpels", "Vintage Alhambra Pendant Onyx / MOP", 434500, 0.10, false],
+        ["Cartier", "Tank Must Watch Small Steel", 511500, 0.10, false]
       ]
     };
 
     const allItems = [];
     Object.entries(rawCatalog).forEach(([cat, items]) => {
-      items.forEach(([brand, name, yen, rate]) => {
-        allItems.push({ cat, brand, name, yen, rate });
+      items.forEach(([brand, name, yen, rate, featured], idx) => {
+        const photo = pickPhoto(cat, name, idx);
+        allItems.push({ cat, brand, name, yen, rate, featured, photo });
       });
     });
 
@@ -976,23 +1143,44 @@
       updateCalculator();
     }
 
-    let activeCat = "all";
+    let activeCat = "featured";
+
+    function setActiveTab(cat) {
+      activeCat = cat;
+      document.querySelectorAll(".folder-btn").forEach(b => {
+        b.classList.toggle("active", b.dataset.cat === cat);
+      });
+      renderCatalog();
+    }
 
     function renderCatalog() {
       const query = document.getElementById("searchInput").value.toLowerCase().trim();
       const grid = document.getElementById("catalogGrid");
+      const expandWrap = document.getElementById("expandWrap");
       grid.innerHTML = "";
 
-      const filtered = allItems.filter(item => {
-        const matchCat = activeCat === "all" || item.cat === activeCat;
-        const matchQuery = !query ||
+      let filtered;
+      if (query) {
+        filtered = allItems.filter(item =>
           item.brand.toLowerCase().includes(query) ||
-          item.name.toLowerCase().includes(query);
-        return matchCat && matchQuery;
-      });
+          item.name.toLowerCase().includes(query)
+        );
+        expandWrap.style.display = "none";
+      } else if (activeCat === "featured") {
+        filtered = allItems.filter(item => item.featured);
+        expandWrap.style.display = "block";
+      } else if (activeCat === "all") {
+        filtered = allItems;
+        expandWrap.style.display = "none";
+      } else {
+        filtered = allItems.filter(item => item.cat === activeCat);
+        expandWrap.style.display = "none";
+      }
 
       document.getElementById("itemCountLabel").textContent =
-        `Menampilkan ${filtered.length} dari 250 pilihan terkurasi`;
+        activeCat === "featured" && !query
+          ? `Menampilkan ${filtered.length} Editor's Top Picks (klik kategori atau tombol di bawah untuk 250 koleksi lengkap)`
+          : `Menampilkan ${filtered.length} item terkurasi`;
 
       filtered.forEach(item => {
         const p = calcPrice(item.yen, item.rate);
@@ -1000,22 +1188,24 @@
         const card = document.createElement("div");
         card.className = "item-card";
         card.innerHTML = `
-          <div>
-            <div class="item-top">
-              <span class="item-brand">${item.brand}</span>
-              <span class="item-fee-badge">Fee ${pctLabel}</span>
-            </div>
-            <div class="item-title">${item.name}</div>
-            <div class="item-desc">Curated Tokyo store sourcing • Incl. authentic packaging & receipt copy.</div>
+          <div class="item-photo-box">
+            <img src="${item.photo}" alt="${item.brand} ${item.name}" loading="lazy" />
+            <span class="item-fee-pill">Fee ${pctLabel}</span>
           </div>
-          <div class="item-footer">
+          <div class="item-body">
             <div>
-              <div class="price-yen">¥${item.yen.toLocaleString("ja-JP")}</div>
-              <div class="price-idr">Est. ${formatIdr(p.total)}</div>
+              <div class="item-brand">${item.brand}</div>
+              <div class="item-title">${item.name}</div>
             </div>
-            <button class="btn-inquire" onclick="inquireItem('${item.brand.replace(/'/g, "\\'")}', '${item.name.replace(/'/g, "\\'")}', ${item.yen}, '${pctLabel}', '${formatIdr(p.total)}')">
-              Inquire
-            </button>
+            <div class="item-footer">
+              <div>
+                <div class="price-yen">¥${item.yen.toLocaleString("ja-JP")}</div>
+                <div class="price-idr">Est. ${formatIdr(p.total)}</div>
+              </div>
+              <button class="btn-inquire" onclick="inquireItem('${item.brand.replace(/'/g, "\\'")}', '${item.name.replace(/'/g, "\\'")}', ${item.yen}, '${pctLabel}', '${formatIdr(p.total)}')">
+                Titip ↗
+              </button>
+            </div>
           </div>
         `;
         grid.appendChild(card);
@@ -1023,12 +1213,12 @@
     }
 
     document.querySelectorAll(".folder-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".folder-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        activeCat = btn.dataset.cat;
-        renderCatalog();
-      });
+      btn.addEventListener("click", () => setActiveTab(btn.dataset.cat));
+    });
+
+    document.getElementById("unlockAllBtn").addEventListener("click", () => {
+      setActiveTab("all");
+      document.getElementById("folderTabs").scrollIntoView({ behavior: "smooth" });
     });
 
     document.getElementById("searchInput").addEventListener("input", renderCatalog);
