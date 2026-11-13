@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOKYO JASTIP — Harajuku Y2K Personal Shopper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Plus+Jakarta+Sans:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f0a12;
+      --bg-card: #1a121f;
+      --bg-glass: rgba(255, 255, 255, 0.06);
+      --pink-neon: #ff2e93;
+      --pink-soft: #ff85c0;
+      --sakura: #ffd1e8;
+      --chrome: #e2e8f0;
+      --cyan-y2k: #00f0ff;
+      --text-main: #ffffff;
+      --text-muted: #b8a9c4;
+      --border-glow: rgba(255, 46, 147, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(255, 46, 147, 0.18), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.12), transparent 40%),
+        linear-gradient(180deg, #0f0a12 0%, #170d1d 100%);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Marquee Top Banner */
+    .marquee-bar {
+      background: linear-gradient(90deg, var(--pink-neon), #ff6eb4, var(--cyan-y2k), var(--pink-neon));
+      background-size: 300% 100%;
+      animation: gradientMove 8s linear infinite;
+      color: #0f0a12;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      padding: 8px 0;
+      text-align: center;
+      text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    header {
+      padding: 56px 0 36px;
+      text-align: center;
+      position: relative;
+    }
+
+    .jp-badge {
+      display: inline-block;
+      border: 1px solid var(--pink-soft);
+      background: rgba(255, 46, 147, 0.15);
+      color: var(--sakura);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 15px rgba(255, 46, 147, 0.3);
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      background: linear-gradient(180deg, #ffffff 20%, #ffb3d9 60%, #ff2e93 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 28px;
+      font-size: 1rem;
+    }
+
+    /* Live Exchange Rate Ticker */
+    .kurs-box {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: rgba(26, 18, 31, 0.9);
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 0 25px rgba(255, 46, 147, 0.2);
+      padding: 14px 24px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .live-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #00ff88;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00ff88;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+
+    .kurs-value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--cyan-y2k);
+    }
+
+    .kurs-time {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Section Title */
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 48px 0 22px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-header span.jp-sub {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.85rem;
+      color: var(--pink-soft);
+      font-weight: 700;
+    }
+
+    /* Rate & Terms Grid */
+    .rates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+    }
+
+    .rate-card {
+      background: var(--bg-glass);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 18px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rate-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--pink-neon);
+      box-shadow: 0 10px 25px rgba(255, 46, 147, 0.2);
+    }
+
+    .rate-cat {
+      font-size: 0.85rem;
+      color: var(--sakura);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .rate-pct {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .rate-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .min-fee-banner {
+      margin-top: 16px;
+      background: linear-gradient(90deg, rgba(255, 46, 147, 0.2), rgba(0, 240, 255, 0.12));
+      border: 1px dashed var(--pink-soft);
+      border-radius: 14px;
+      padding: 14px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    /* Interactive Folder Tabs for Osusume Catalog */
+    .folder-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .folder-btn {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 10px 18px;
+      border-radius: 14px 14px 4px 4px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .folder-btn:hover {
+      color: #fff;
+      border-color: var(--pink-soft);
+    }
+
+    .folder-btn.active {
+      background: linear-gradient(135deg, var(--pink-neon), #c9186e);
+      color: #fff;
+      border-color: var(--pink-soft);
+      box-shadow: 0 4px 18px rgba(255, 46, 147, 0.45);
+    }
+
+    /* Product Cards Grid */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .item-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .item-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--pink-neon);
+      box-shadow: 0 12px 30px rgba(255, 46, 147, 0.22);
+    }
+
+    .item-img-wrap {
+      position: relative;
+      height: 200px;
+      background: #24192b;
+      overflow: hidden;
+    }
+
+    .item-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .item-card:hover .item-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .item-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(15, 10, 18, 0.82);
+      backdrop-filter: blur(6px);
+      border: 1px solid var(--pink-soft);
+      color: var(--sakura);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .item-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .item-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+
+    .item-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+
+    .price-box {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 10px 12px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      font-size: 0.82rem;
+    }
+
+    .price-yen {
+      color: var(--cyan-y2k);
+      font-weight: 700;
+    }
+
+    .price-idr {
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .btn-order-item {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(90deg, var(--pink-neon), #ff5ca8);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-order-item:hover {
+      opacity: 0.9;
+    }
+
+    /* Calculator & Custom Request Box */
+    .split-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .panel-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .panel-box h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: var(--sakura);
+    }
+
+    .panel-box p.sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--chrome);
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      background: #110b15;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #fff;
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--pink-neon);
+    }
+
+    /* Photo Upload Preview */
+    .upload-area {
+      border: 1.5px dashed rgba(255, 133, 192, 0.5);
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+      background: rgba(255, 46, 147, 0.05);
+      cursor: pointer;
+    }
+
+    .upload-area input {
+      display: none;
+    }
+
+    #previewImg {
+      max-width: 100%;
+      max-height: 150px;
+      border-radius: 10px;
+      margin-top: 10px;
+      display: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .calc-result {
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      border-radius: 14px;
+      padding: 14px;
+      margin-top: 14px;
+    }
+
+    .calc-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      color: var(--chrome);
+    }
+
+    .calc-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--cyan-y2k);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 8px;
+      margin-top: 6px;
+    }
+
+    .btn-line-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 14px;
+      background: #06C755;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      margin-top: 14px;
+      box-shadow: 0 6px 20px rgba(6, 199, 85, 0.35);
+      transition: transform 0.2s;
+    }
+
+    .btn-line-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px 60px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="marquee-bar">
+    ✦ TOKYO PERSONAL SHOPPER (JASTIP JEPANG → INDONESIA) • HARAJUKU & SHIBUYA EDITION • DIRECT ORDER VIA LINE ✦
+  </div>
+
+  <div class="container">
+    <!-- HERO -->
+    <header>
+      <div class="jp-badge">東京直輸入 • TOKYO Y2K EDITION</div>
+      <h1>TOKYO JASTIP CATALOG</h1>
+      <p class="subtitle">
+        Titip belanja langsung dari Tokyo—mulai dari jajanan Donki, skincare viral Matsukiyo, streetwear Harajuku, hingga luxury item Ginza.
+      </p>
+
+      <!-- LIVE KURS -->
+      <div class="kurs-box">
+        <span class="live-dot"></span>
+        <span>LIVE KURS DETIK INI:</span>
+        <span class="kurs-value" id="liveRateDisplay">Memuat ¥1 = Rp...</span>
+        <span class="kurs-time" id="rateTimestamp">Sinkronisasi real-time</span>
+      </div>
+    </header>
+
+    <!-- KETENTUAN & FEE -->
+    <div class="section-header">
+      <h2>JASTIP FEE & TERMS <span class="jp-sub">料金システム</span></h2>
+    </div>
+
+    <div class="rates-grid">
+      <div class="rate-card">
+        <div class="rate-cat">🍜 Food & Snack</div>
+        <div class="rate-pct">30% – 35%</div>
+        <div class="rate-note">30% snack ringan, 35% item berat/bervolume.</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-cat">💄 Skincare & Makeup</div>
+        <div class="rate-pct">15% – 25%</div>
+        <div class="rate-note">15% item botol/jar besar, 25% item kecil/drugstore.</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-cat">👟 Sepatu & Tas</div>
+        <div class="rate-pct">25% – 30%</div>
+        <div class="rate-note">25% tanpa box, 30% dengan box (volumetrik).</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-cat">🎀 Baju / Apparel</div>
+        <div class="rate-pct">15%</div>
+        <div class="rate-note">Flat 15% untuk Uniqlo, GU, Harajuku & thrift.</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-cat">💎 Branded / Luxury</div>
+        <div class="rate-pct">10% – 15%</div>
+        <div class="rate-note">Include kelengkapan paperbag/receipt store.</div>
+      </div>
+    </div>
+
+    <div class="min-fee-banner">
+      <div><strong>⚡ MINIMUM FEE: Rp 15.000 / item</strong> (Berlaku jika hasil hitungan persentase di bawah Rp 15.000).</div>
+      <div><strong>🎟️ PROMO & DISKON:</strong> Mengikuti ketentuan promo aktif <em>Bellachérie</em>.</div>
+    </div>
+
+    <!-- KATALOG OSUSUME (FOLDER PER KATEGORI) -->
+    <div class="section-header">
+      <h2>OSUSUME FOLDER <span class="jp-sub">おすすめカタログ (Klik Kategori)</span></h2>
+    </div>
+
+    <div class="folder-tabs" id="folderTabs">
+      <button class="folder-btn active" data-cat="all">📁 Semua Folder</button>
+      <button class="folder-btn" data-cat="food">🍜 Food & Snack (30-35%)</button>
+      <button class="folder-btn" data-cat="skincare">💄 Skincare & Makeup (15-25%)</button>
+      <button class="folder-btn" data-cat="shoesbag">👟 Sepatu & Tas (25-30%)</button>
+      <button class="folder-btn" data-cat="clothes">🎀 Baju (15%)</button>
+      <button class="folder-btn" data-cat="luxury">💎 Branded / Luxury (10-15%)</button>
+    </div>
+
+    <div class="catalog-grid" id="catalogGrid">
+      <!-- Diisi otomatis oleh JavaScript -->
+    </div>
+
+    <!-- KALKULATOR & CUSTOM REQUEST + FOTO KE LINE -->
+    <div class="section-header">
+      <h2>ESTIMASI & CUSTOM REQUEST <span class="jp-sub">オーダーフォーム</span></h2>
+    </div>
+
+    <div class="split-grid">
+      <!-- KALKULATOR REAL-TIME -->
+      <div class="panel-box">
+        <h3>1. Kalkulator Harga Jepang</h3>
+        <p class="sub">Masukkan harga tag Jepang (Yen) untuk melihat estimasi total rupiah + fee jastip otomatis.</p>
+
+        <div class="form-group">
+          <label>Pilih Kategori Barang</label>
+          <select id="calcCategory">
+            <option value="0.30">Food & Snack — Ringan (30%)</option>
+            <option value="0.35">Food & Snack — Berat/Box (35%)</option>
+            <option value="0.15">Skincare & Makeup — Reguler (15%)</option>
+            <option value="0.25">Skincare & Makeup — Mini/Drugstore (25%)</option>
+            <option value="0.25">Sepatu & Tas — Tanpa Box (25%)</option>
+            <option value="0.30">Sepatu & Tas — Pakai Box (30%)</option>
+            <option value="0.15">Baju / Apparel (15%)</option>
+            <option value="0.10">Branded / Luxury — High Value (10%)</option>
+            <option value="0.15">Branded / Luxury — Standard (15%)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Harga Barang di Jepang (¥ JPY)</label>
+          <input type="number" id="calcYen" placeholder="Contoh: 2500" value="2500" min="1" />
+        </div>
+
+        <div class="calc-result">
+          <div class="calc-row">
+            <span>Harga Dasar (IDR):</span>
+            <span id="resBase">Rp 0</span>
+          </div>
+          <div class="calc-row">
+            <span>Fee Jastip (Min. Rp15.000):</span>
+            <span id="resFee">Rp 0</span>
+          </div>
+          <div class="calc-total">
+            <span>Estimasi Total:</span>
+            <span id="resTotal">Rp 0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM REQUEST + UPLOAD FOTO + REDIRECT LINE -->
+      <div class="panel-box">
+        <h3>2. Kirim Request & Foto ke LINE</h3>
+        <p class="sub">Punya incaran di luar katalog? Isi detailnya & lampirkan foto lalu langsung chat ke LINE.</p>
+
+        <div class="form-group">
+          <label>Nama Barang / Link Referensi</label>
+          <input type="text" id="reqName" placeholder="Contoh: Onitsuka Tiger Mexico 66 White/Blue" />
+        </div>
+
+        <div class="form-group">
+          <label>Kategori & Catatan (Size / Warna / Qty)</label>
+          <input type="text" id="reqNote" placeholder="Contoh: Sepatu (25%), Size 38, 1 pcs" />
+        </div>
+
+        <div class="form-group">
+          <label>Upload Foto Referensi (Opsional — bisa juga kirim tanpa foto)</label>
+          <label class="upload-area" for="photoInput">
+            <span>📸 Klik untuk pilih foto barang dari galeri</span>
+            <input type="file" id="photoInput" accept="image/*" />
+            <img id="previewImg" alt="Preview Barang" />
+          </label>
+        </div>
+
+        <button type="button" class="btn-line-cta" id="sendToLineBtn">
+          💬 Lanjut & Kirim Pesanan ke LINE
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <p>TOKYO JASTIP • Inspired by 2000s Shibuya & Harajuku Culture</p>
+      <p style="margin-top:6px;">Direct LINE Order: <a href="https://line.me/ti/p/JxcFA9gakM" target="_blank" style="color:var(--pink-soft);">line.me/ti/p/JxcFA9gakM</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const LINE_URL = "https://line.me/ti/p/JxcFA9gakM";
+    let currentJpyToIdr = 108; // Fallback rate jika API lambat
+
+    // Data Produk Osusume per Kategori
+    const osusumeItems = [
+      // FOOD & SNACK (30-35%)
+      {
+        cat: "food",
+        tag: "Food • 30%",
+        feeRate: 0.30,
+        title: "Ichiran Ramen Take-Home Box (Isi 5)",
+        desc: "Ramen tonkotsu legendaris Fukuoka lengkap dengan bumbu merah khas Ichiran.",
+        yen: 2200,
+        img: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        cat: "food",
+        tag: "Snack • 30%",
+        feeRate: 0.30,
+        title: "Tokyo Banana Original / Custard",
+        desc: "Sponge cake lembut isi krim pisang khas Tokyo, wajib oleh-oleh.",
+        yen: 1200,
+        img: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        cat: "food",
+        tag: "Snack • 35%",
+        feeRate: 0.35,
+        title: "Royce' Nama Chocolate Matcha / Au Lait",
+        desc: "Cokelat lembut Jepang (termasuk thermal bag khusus agar tetap dingin).",
+        yen: 864,
+        img: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80"
+      },
+      // SKINCARE & MAKEUP (15-25%)
+      {
+        cat: "skincare",
+        tag: "Skincare • 15%",
+        feeRate: 0.15,
+        title: "Shiseido Fino Premium Touch Hair Mask",
+        desc: "Hair mask viral Jepang untuk rambut super halus & berkilau.",
+        yen: 1078,
+        img: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        cat: "skincare",
+        tag: "Makeup • 25%",
+        feeRate: 0.25,
+        title: "Canmake Marshmallow Finish Powder",
+        desc: "Bedak padat andalan cewek Shibuya untuk tampilan matte porcelain.",
+        yen: 1034,
+        img: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        cat: "skincare",
+        tag: "Skincare • 15%",
+        feeRate: 0.15,
+        title: "Anessa Perfect UV Sunscreen Skincare Milk",
+        desc: "Sunscreen gold paling laris di Jepang, tahan air dan keringat.",
+        yen: 3058,
+        img: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=600&q=80"
+      },
+      // SEPATU & TAS (25-30%)
+      {
+        cat: "shoesbag",
+        tag: "Sepatu • 25%",
+        feeRate: 0.25,
+        title: "Onitsuka Tiger Mexico 66 Classic",
+        desc: "Sneakers ikonik Jepang langsung dari store Omotesando / Shibuya.",
+        yen: 15400,
+        img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        cat: "shoesbag",
+        tag: "Tas • 25%",
+        feeRate: 0.25,
+        title: "Porter Yoshida & Co. Tanker Shoulder Bag",
+        desc: "Tas nilon ikonik buatan Jepang yang awet dan timeless.",
+        yen: 25850,
+        img: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80"
+      },
+      // BAJU (15%)
+      {
+        cat: "clothes",
+        tag: "Baju • 15%",
+        feeRate: 0.15,
+        title: "Uniqlo Japan Exclusive UT / Cardigan",
+        desc: "Koleksi rilisan khusus Jepang & harga jauh lebih hemat dari store Indo.",
+        yen: 2990,
+        img: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        cat: "clothes",
+        tag: "Baju • 15%",
+        feeRate: 0.15,
+        title: "Harajuku Y2K Baby Tee & Zip Hoodie",
+        desc: "Fashion street-style ala Takeshita Street Harajuku.",
+        yen: 4500,
+        img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80"
+      },
+      // BRANDED / LUXURY (10-15%)
+      {
+        cat: "luxury",
+        tag: "Luxury • 10%",
+        feeRate: 0.10,
+        title: "Comme des Garçons PLAY Cardigan / Tee",
+        desc: "Langsung dari store Aoyama / Dover Street Market Ginza.",
+        yen: 34100,
+        img: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80"
+      },
+      {
+        cat: "luxury",
+        tag: "Branded • 12%",
+        feeRate: 0.12,
+        title: "Bao Bao Issey Miyake Lucent Tote",
+        desc: "Tas geometris ikonik Jepang lengkap dengan dustbag & paperbag.",
+        yen: 46200,
+        img: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=600&q=80"
+      }
+    ];
+
+    function formatRupiah(num) {
+      return "Rp " + Math.round(num).toLocaleString("id-ID");
+    }
+
+    function calculateTotal(yen, feeRate) {
+      const baseIdr = yen * currentJpyToIdr;
+      const rawFee = baseIdr * feeRate;
+      const finalFee = Math.max(15000, rawFee); // Minimum fee Rp 15.000
+      return {
+        baseIdr,
+        finalFee,
+        total: baseIdr + finalFee
+      };
+    }
+
+    // Fetch Live JPY -> IDR Rate
+    async function fetchLiveRate() {
+      try {
+        const res = await fetch("https://open.er-api.com/v6/latest/JPY");
+        const data = await res.json();
+        if (data && data.rates && data.rates.IDR) {
+          currentJpyToIdr = data.rates.IDR;
+        }
+      } catch (e) {
+        console.warn("Menggunakan kurs cadangan:", e);
+      }
+      const now = new Date();
+      document.getElementById("liveRateDisplay").textContent =
+        `¥1 = ${formatRupiah(currentJpyToIdr)}`;
+      document.getElementById("rateTimestamp").textContent =
+        `Update: ${now.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", second: "2-digit" })}`;
+
+      renderCatalog(currentFilter);
+      updateCalculator();
+    }
+
+    let currentFilter = "all";
+
+    function renderCatalog(filter) {
+      currentFilter = filter;
+      const grid = document.getElementById("catalogGrid");
+      grid.innerHTML = "";
+
+      const filtered = filter === "all"
+        ? osusumeItems
+        : osusumeItems.filter(item => item.cat === filter);
+
+      filtered.forEach(item => {
+        const calc = calculateTotal(item.yen, item.feeRate);
+        const card = document.createElement("div");
+        card.className = "item-card";
+        card.innerHTML = `
+          <div class="item-img-wrap">
+            <img src="${item.img}" alt="${item.title}" loading="lazy" />
+            <span class="item-tag">${item.tag}</span>
+          </div>
+          <div class="item-body">
+            <div class="item-title">${item.title}</div>
+            <div class="item-desc">${item.desc}</div>
+            <div class="price-box">
+              <div class="price-yen">¥${item.yen.toLocaleString("ja-JP")}</div>
+              <div class="price-idr">Est. ${formatRupiah(calc.total)} <span style="font-size:0.72rem;font-weight:400;color:#b8a9c4;">(incl. fee)</span></div>
+            </div>
+            <button class="btn-order-item" onclick="orderCatalogItem('${item.title.replace(/'/g, "\\'")}', ${item.yen}, '${item.tag}', '${formatRupiah(calc.total)}')">
+              Titip via LINE ↗
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Folder Tab Click Handler
+    document.querySelectorAll(".folder-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".folder-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderCatalog(btn.dataset.cat);
+      });
+    });
+
+    // Calculator Handler
+    function updateCalculator() {
+      const yen = parseFloat(document.getElementById("calcYen").value) || 0;
+      const rate = parseFloat(document.getElementById("calcCategory").value);
+      if (yen <= 0) {
+        document.getElementById("resBase").textContent = "Rp 0";
+        document.getElementById("resFee").textContent = "Rp 0";
+        document.getElementById("resTotal").textContent = "Rp 0";
+        return;
+      }
+      const res = calculateTotal(yen, rate);
+      document.getElementById("resBase").textContent = formatRupiah(res.baseIdr);
+      document.getElementById("resFee").textContent = formatRupiah(res.finalFee);
+      document.getElementById("resTotal").textContent = formatRupiah(res.total);
+    }
+
+    document.getElementById("calcYen").addEventListener("input", updateCalculator);
+    document.getElementById("calcCategory").addEventListener("change", updateCalculator);
+
+    // Direct Order from Catalog Card -> Copy format & open LINE
+    function orderCatalogItem(title, yen, tag, estIdr) {
+      const msg = `Halo! Mau titip dari Katalog Tokyo Jastip:\n• Barang: ${title}\n• Kategori: ${tag}\n• Harga Tag: ¥${yen}\n• Estimasi Total: ${estIdr}\n\nMohon info ketersediaannya ya!`;
+      navigator.clipboard?.writeText(msg);
+      alert("Format pesanan otomatis disalin! Kamu akan diarahkan ke LINE—tinggal Paste (Tempel) di chat ya.");
+      window.open(LINE_URL, "_blank");
+    }
+
+    // Photo Preview
+    let hasPhoto = false;
+    document.getElementById("photoInput").addEventListener("change", function(e) {
+      const file = e.target.files[0];
+      const preview = document.getElementById("previewImg");
+      if (file) {
+        hasPhoto = true;
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          preview.src = ev.target.result;
+          preview.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+      } else {
+        hasPhoto = false;
+        preview.style.display = "none";
+      }
+    });
+
+    // Custom Request -> LINE
+    document.getElementById("sendToLineBtn").addEventListener("click", () => {
+      const name = document.getElementById("reqName").value.trim() || "(Belum diisi)";
+      const note = document.getElementById("reqNote").value.trim() || "-";
+      const photoNote = hasPhoto
+        ? "📸 Ada foto referensi (akan saya kirimkan langsung di chat LINE ini)."
+        : "Tanpa foto referensi.";
+
+      const msg = `Halo! Mau custom request Jastip Jepang:\n• Barang: ${name}\n• Detail/Kategori: ${note}\n• Foto: ${photoNote}`;
+      navigator.clipboard?.writeText(msg);
+      alert("Detail pesanan sudah disalin ke clipboard! Setelah masuk ke LINE, silakan Paste pesannya" + (hasPhoto ? " dan kirim foto yang tadi dipilih ya." : "."));
+      window.open(LINE_URL, "_blank");
+    });
+
+    // Jalankan pertama kali & refresh kurs setiap 60 detik
+    fetchLiveRate();
+    setInterval(fetchLiveRate, 60000);
+  </script>
+</body>
+</html>
